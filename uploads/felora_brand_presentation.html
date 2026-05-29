@@ -1,0 +1,584 @@
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Georgia',serif;background:#F7F3EE;color:#2C2C2A;overflow-x:hidden;}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap');
+.deck{font-family:'Jost',sans-serif;}
+.serif{font-family:'Cormorant Garamond',Georgia,serif;}
+
+/* COVER */
+.cover{background:#2C2C2A;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 40px;position:relative;overflow:hidden;}
+.cover-grain{position:absolute;inset:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none;}
+.cover-line{width:1px;height:60px;background:rgba(196,168,130,.35);margin:0 auto 32px;}
+.cover-eyebrow{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:rgba(196,168,130,.7);margin-bottom:32px;}
+.cover-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(72px,12vw,128px);font-weight:300;color:#F7F3EE;line-height:.9;letter-spacing:.1em;margin-bottom:16px;}
+.cover-name em{font-style:italic;color:#C4A882;}
+.cover-tag{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(196,168,130,.6);margin-top:20px;margin-bottom:48px;}
+.cover-divider{display:flex;align-items:center;gap:20px;margin-bottom:48px;}
+.cover-divider-line{flex:1;height:1px;background:rgba(196,168,130,.18);}
+.cover-divider-dot{width:4px;height:4px;background:rgba(196,168,130,.4);border-radius:50%;}
+.cover-meta{display:flex;gap:48px;justify-content:center;flex-wrap:wrap;}
+.cover-meta-item{text-align:center;}
+.cover-meta-label{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(196,168,130,.45);margin-bottom:6px;}
+.cover-meta-value{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;color:rgba(247,243,238,.8);}
+
+/* SECTION BASE */
+.section{padding:80px 48px;}
+.section-inner{max-width:900px;margin:0 auto;}
+.section-label{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:#8B6F5E;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.section-label::before{content:'';display:block;width:20px;height:1px;background:#C4A882;flex-shrink:0;}
+.section-h{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(32px,5vw,56px);font-weight:300;line-height:1.1;color:#2C2C2A;margin-bottom:20px;}
+.section-h em{font-style:italic;color:#8B6F5E;}
+.section-rule{width:40px;height:1px;background:#C4A882;margin:20px 0 28px;}
+.body{font-family:'Jost',sans-serif;font-size:15px;line-height:1.9;color:#7A6055;font-weight:300;}
+.body+.body{margin-top:14px;}
+
+/* LOGO SECTION */
+.logo-section{background:#F7F3EE;border-bottom:1px solid rgba(139,111,94,.12);}
+.logo-showcase{display:flex;gap:2px;margin-top:40px;}
+.logo-box{flex:1;padding:44px 32px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:180px;}
+.logo-box-primary{background:#2C2C2A;}
+.logo-box-ivory{background:#F7F3EE;border:1px solid rgba(139,111,94,.14);}
+.logo-box-terra{background:#8B6F5E;}
+.logo-box-blush{background:#E8D5C4;}
+.logo-wordmark{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;letter-spacing:.5em;}
+.logo-wordmark-xl{font-size:32px;}
+.logo-box-primary .logo-wordmark{color:#F7F3EE;}
+.logo-box-ivory .logo-wordmark{color:#2C2C2A;}
+.logo-box-terra .logo-wordmark{color:#F7F3EE;}
+.logo-box-blush .logo-wordmark{color:#2C2C2A;}
+.logo-sub{font-family:'Jost',sans-serif;font-size:8px;letter-spacing:.2em;text-transform:uppercase;margin-top:8px;opacity:.6;}
+.logo-box-primary .logo-sub{color:#C4A882;}
+.logo-box-ivory .logo-sub{color:#8B6F5E;}
+.logo-box-terra .logo-sub{color:rgba(247,243,238,.7);}
+.logo-box-blush .logo-sub{color:#8B6F5E;}
+
+/* COLORS */
+.colors-section{background:#EFE9E0;}
+.color-row{display:flex;gap:2px;margin-top:36px;}
+.color-swatch{flex:1;padding:32px 16px 18px;text-align:center;}
+.color-name{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.12em;text-transform:uppercase;margin-top:12px;font-weight:400;}
+.color-hex{font-family:'Jost',sans-serif;font-size:9px;opacity:.6;margin-top:3px;}
+.sw-ivory{background:#F7F3EE;}.sw-ivory .color-name{color:#8B6F5E;}.sw-ivory .color-hex{color:#8B6F5E;}
+.sw-cream{background:#EFE9E0;}.sw-cream .color-name{color:#8B6F5E;}.sw-cream .color-hex{color:#8B6F5E;}
+.sw-blush{background:#E8D5C4;}.sw-blush .color-name{color:#7A6055;}.sw-blush .color-hex{color:#7A6055;}
+.sw-terra{background:#8B6F5E;}.sw-terra .color-name{color:#F7F3EE;}.sw-terra .color-hex{color:rgba(247,243,238,.65);}
+.sw-sand{background:#C4A882;}.sw-sand .color-name{color:#2C2C2A;}.sw-sand .color-hex{color:rgba(44,44,42,.6);}
+.sw-noir{background:#2C2C2A;}.sw-noir .color-name{color:#C4A882;}.sw-noir .color-hex{color:rgba(196,168,130,.6);}
+
+/* MISSION */
+.mission-section{background:#2C2C2A;padding:80px 48px;}
+.mission-inner{max-width:800px;margin:0 auto;text-align:center;}
+.mission-overline{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:rgba(196,168,130,.6);margin-bottom:32px;display:flex;align-items:center;justify-content:center;gap:16px;}
+.mission-overline::before,.mission-overline::after{content:'';display:block;width:28px;height:1px;background:rgba(196,168,130,.28);}
+.mission-statement{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(22px,4vw,40px);line-height:1.22;font-weight:300;color:#F7F3EE;margin-bottom:24px;}
+.mission-statement em{font-style:italic;color:#C4A882;}
+.mission-rule{width:40px;height:1px;background:rgba(196,168,130,.3);margin:24px auto;}
+.mission-body{font-family:'Jost',sans-serif;font-size:14px;line-height:1.9;color:rgba(196,168,130,.65);max-width:580px;margin:0 auto 36px;font-weight:300;}
+.mission-pill{display:inline-block;border:1px solid rgba(139,111,94,.28);padding:10px 26px;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(196,168,130,.7);}
+
+/* PRODUCT */
+.product-section{background:#F7F3EE;}
+.product-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px;}
+.product-card{background:#EFE9E0;padding:36px 32px;}
+.product-card-dark{background:#2C2C2A;}
+.product-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:48px;font-weight:300;color:rgba(139,111,94,.2);line-height:1;margin-bottom:14px;}
+.product-card-dark .product-num{color:rgba(196,168,130,.18);}
+.product-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:400;color:#2C2C2A;margin-bottom:8px;}
+.product-card-dark .product-name{color:#F7F3EE;}
+.product-desc{font-family:'Jost',sans-serif;font-size:13px;line-height:1.75;color:#7A6055;font-weight:300;}
+.product-card-dark .product-desc{color:rgba(196,168,130,.6);}
+.product-price-row{display:flex;align-items:baseline;gap:10px;margin-top:14px;}
+.product-price{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;color:#2C2C2A;}
+.product-card-dark .product-price{color:#F7F3EE;}
+.product-cost{font-family:'Jost',sans-serif;font-size:11px;color:#C4A882;margin-top:3px;}
+.product-margin{display:inline-block;background:rgba(139,111,94,.15);padding:3px 9px;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#8B6F5E;margin-top:8px;}
+.product-card-dark .product-margin{background:rgba(196,168,130,.12);color:#C4A882;}
+
+/* AUDIENCE */
+.audience-section{background:#E8D5C4;}
+.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px;}
+.audience-card{background:#F7F3EE;padding:36px 28px;}
+.audience-icon{font-family:'Cormorant Garamond',Georgia,serif;font-size:36px;font-weight:300;font-style:italic;color:rgba(139,111,94,.4);margin-bottom:14px;line-height:1;}
+.audience-label{font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-weight:400;color:#2C2C2A;margin-bottom:10px;}
+.audience-desc{font-family:'Jost',sans-serif;font-size:12px;line-height:1.75;color:#7A6055;font-weight:300;}
+
+/* NUMBERS */
+.numbers-section{background:#2C2C2A;}
+.numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:40px;}
+.number-card{background:#3A3A38;padding:36px 24px;text-align:center;}
+.number-value{font-family:'Cormorant Garamond',Georgia,serif;font-size:42px;font-weight:300;color:#F7F3EE;line-height:1;}
+.number-value em{font-style:italic;color:#C4A882;}
+.number-label{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(196,168,130,.5);margin-top:10px;}
+
+/* REVENUE */
+.revenue-section{background:#F7F3EE;}
+.phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px;}
+.phase-card{padding:36px 28px;}
+.phase-1{background:#EFE9E0;}
+.phase-2{background:#E8D5C4;}
+.phase-3{background:#2C2C2A;}
+.phase-label{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#8B6F5E;margin-bottom:12px;}
+.phase-3 .phase-label{color:#C4A882;}
+.phase-days{font-family:'Cormorant Garamond',Georgia,serif;font-size:36px;font-weight:300;color:#2C2C2A;line-height:1;margin-bottom:8px;}
+.phase-3 .phase-days{color:#F7F3EE;}
+.phase-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;font-weight:400;font-style:italic;color:#8B6F5E;margin-bottom:16px;}
+.phase-3 .phase-title{color:#C4A882;}
+.phase-items{display:grid;gap:8px;}
+.phase-item{font-family:'Jost',sans-serif;font-size:12px;color:#7A6055;font-weight:300;display:flex;gap:10px;align-items:flex-start;line-height:1.55;}
+.phase-item::before{content:'—';color:#C4A882;flex-shrink:0;font-size:10px;margin-top:1px;}
+.phase-3 .phase-item{color:rgba(196,168,130,.65);}
+.phase-goal{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:300;color:#2C2C2A;margin-top:20px;padding-top:16px;border-top:1px solid rgba(139,111,94,.14);}
+.phase-3 .phase-goal{color:#F7F3EE;border-top-color:rgba(196,168,130,.14);}
+
+/* TYPOGRAPHY */
+.type-section{background:#EFE9E0;}
+.type-showcase{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px;}
+.type-block{}
+.type-specimen-serif{font-family:'Cormorant Garamond',Georgia,serif;font-size:52px;font-weight:300;color:#2C2C2A;line-height:1.05;margin-bottom:12px;}
+.type-specimen-serif em{font-style:italic;color:#8B6F5E;}
+.type-specimen-sans{font-family:'Jost',sans-serif;font-size:14px;font-weight:300;color:#7A6055;line-height:1.8;letter-spacing:.02em;}
+.type-name{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#8B6F5E;margin-bottom:4px;}
+.type-desc{font-family:'Jost',sans-serif;font-size:11px;color:rgba(139,111,94,.65);}
+
+/* VOICE */
+.voice-section{background:#F7F3EE;}
+.voice-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px;}
+.voice-card{padding:36px 32px;}
+.voice-yes{background:#EFE9E0;}
+.voice-no{background:#E8D5C4;}
+.voice-header{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:20px;}
+.voice-yes .voice-header{color:#8B6F5E;}
+.voice-no .voice-header{color:rgba(139,111,94,.5);}
+.voice-items{display:grid;gap:12px;}
+.voice-item{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:300;font-style:italic;display:flex;gap:12px;align-items:flex-start;line-height:1.5;}
+.voice-yes .voice-item{color:#2C2C2A;}
+.voice-no .voice-item{color:rgba(122,96,85,.55);text-decoration:line-through;text-decoration-color:rgba(139,111,94,.3);}
+.voice-marker{font-style:normal;font-size:12px;flex-shrink:0;margin-top:2px;}
+.voice-yes .voice-marker{color:#C4A882;}
+.voice-no .voice-marker{color:rgba(139,111,94,.3);}
+
+/* PLATFORM */
+.platform-section{background:#2C2C2A;}
+.platform-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:40px;}
+.platform-card{background:#3A3A38;padding:28px 24px;text-align:center;}
+.platform-handle{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;color:#F7F3EE;margin-bottom:6px;}
+.platform-network{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(196,168,130,.5);}
+
+/* CLOSING */
+.closing{background:#E8D5C4;padding:80px 48px;text-align:center;}
+.closing-inner{max-width:640px;margin:0 auto;}
+.closing-h{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(36px,6vw,64px);font-weight:300;line-height:1.1;color:#2C2C2A;margin-bottom:20px;}
+.closing-h em{font-style:italic;color:#8B6F5E;}
+.closing-body{font-family:'Jost',sans-serif;font-size:14px;line-height:1.9;color:#7A6055;font-weight:300;margin-bottom:36px;}
+.closing-sig{font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-style:italic;color:#8B6F5E;}
+.closing-contact{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(139,111,94,.6);margin-top:10px;}
+
+/* NAV */
+.deck-nav{position:sticky;top:0;z-index:100;background:rgba(247,243,238,.95);backdrop-filter:blur(12px);padding:14px 48px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(139,111,94,.1);}
+.deck-nav-brand{font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;letter-spacing:.35em;color:#2C2C2A;font-weight:400;}
+.deck-nav-links{display:flex;gap:28px;}
+.deck-nav-links a{font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8B6F5E;cursor:pointer;transition:color .2s;text-decoration:none;}
+.deck-nav-links a:hover{color:#2C2C2A;}
+.pg-num{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.12em;color:rgba(139,111,94,.45);}
+</style>
+
+<div class="deck">
+
+<nav class="deck-nav">
+  <div class="deck-nav-brand">FELŌRA</div>
+  <div class="deck-nav-links">
+    <a onclick="document.getElementById('s-brand').scrollIntoView({behavior:'smooth'})">Brand</a>
+    <a onclick="document.getElementById('s-mission').scrollIntoView({behavior:'smooth'})">Mission</a>
+    <a onclick="document.getElementById('s-product').scrollIntoView({behavior:'smooth'})">Products</a>
+    <a onclick="document.getElementById('s-revenue').scrollIntoView({behavior:'smooth'})">Revenue</a>
+  </div>
+</nav>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-grain"></div>
+  <div class="cover-eyebrow">Brand Proposal &nbsp;·&nbsp; 2026</div>
+  <div class="cover-name serif">FELŌRA</div>
+  <div class="cover-tag">For she who carries life</div>
+  <div class="cover-divider" style="width:220px;">
+    <div class="cover-divider-line"></div>
+    <div class="cover-divider-dot"></div>
+    <div class="cover-divider-line"></div>
+  </div>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Category</div>
+      <div class="cover-meta-value">Premium Maternity</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Market</div>
+      <div class="cover-meta-value">USA · UK · Africa</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Channel</div>
+      <div class="cover-meta-value">Shopify D2C</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Target Year 1</div>
+      <div class="cover-meta-value">$100,000</div>
+    </div>
+  </div>
+</div>
+
+<!-- BRAND IDENTITY -->
+<div id="s-brand"></div>
+
+<div class="section logo-section">
+  <div class="section-inner">
+    <div class="section-label">01 &nbsp;·&nbsp; Brand identity</div>
+    <h2 class="section-h serif">The <em>name, the mark,</em><br>the meaning.</h2>
+    <div class="section-rule"></div>
+    <p class="body">FELŌRA (fel·OR·ah) — from the Latin <em>ferre</em> (to carry) and <em>flora</em> (to bloom). The macron over the Ō is intentional. A small mark of distinction that signals immediately: this is not ordinary. This is considered. This is premium.</p>
+    <p class="body" style="margin-top:14px;">The wordmark is set in Cormorant Garamond at tracking .5em — wide-spaced, unhurried, confident. Paired with Jost for all body copy: clean, modern, quiet authority.</p>
+    <div class="logo-showcase">
+      <div class="logo-box logo-box-primary">
+        <div class="logo-wordmark logo-wordmark-xl">FELŌRA</div>
+        <div class="logo-sub">Primary · Dark</div>
+      </div>
+      <div class="logo-box logo-box-ivory">
+        <div class="logo-wordmark logo-wordmark-xl">FELŌRA</div>
+        <div class="logo-sub">Primary · Light</div>
+      </div>
+      <div class="logo-box logo-box-terra">
+        <div class="logo-wordmark logo-wordmark-xl">FELŌRA</div>
+        <div class="logo-sub">Accent · Terra</div>
+      </div>
+      <div class="logo-box logo-box-blush">
+        <div class="logo-wordmark logo-wordmark-xl">FELŌRA</div>
+        <div class="logo-sub">Warm · Blush</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COLORS -->
+<div class="section colors-section">
+  <div class="section-inner">
+    <div class="section-label">02 &nbsp;·&nbsp; Brand palette</div>
+    <h2 class="section-h serif">Six tones.<br><em>One feeling.</em></h2>
+    <div class="section-rule"></div>
+    <p class="body">Every color was chosen to evoke warmth, softness, and quiet luxury. Nothing loud. Nothing clinical. The palette should feel like the inside of a beautiful boutique — or the first few moments of rest after weeks of discomfort.</p>
+    <div class="color-row">
+      <div class="color-swatch sw-ivory"><div class="color-name">Ivory</div><div class="color-hex">#F7F3EE</div></div>
+      <div class="color-swatch sw-cream"><div class="color-name">Cream</div><div class="color-hex">#EFE9E0</div></div>
+      <div class="color-swatch sw-blush"><div class="color-name">Blush</div><div class="color-hex">#E8D5C4</div></div>
+      <div class="color-swatch sw-terra"><div class="color-name">Terra</div><div class="color-hex">#8B6F5E</div></div>
+      <div class="color-swatch sw-sand"><div class="color-name">Sand</div><div class="color-hex">#C4A882</div></div>
+      <div class="color-swatch sw-noir"><div class="color-name">Noir</div><div class="color-hex">#2C2C2A</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TYPOGRAPHY -->
+<div class="section type-section" style="background:#F7F3EE;">
+  <div class="section-inner">
+    <div class="section-label">03 &nbsp;·&nbsp; Typography</div>
+    <h2 class="section-h serif">Two typefaces.<br><em>Perfect balance.</em></h2>
+    <div class="section-rule"></div>
+    <div class="type-showcase">
+      <div class="type-block">
+        <div class="type-name">Cormorant Garamond — Headlines</div>
+        <div class="type-desc" style="margin-bottom:20px;">300 light · 400 regular · 400 italic</div>
+        <div class="type-specimen-serif">For she who<br>carries <em>life.</em></div>
+      </div>
+      <div class="type-block">
+        <div class="type-name">Jost — Body & UI</div>
+        <div class="type-desc" style="margin-bottom:20px;">300 light · 400 regular · 500 medium</div>
+        <div class="type-specimen-sans">The aching back at 2am.<br>The heaviness that pulls at<br>your hips. The exhaustion<br>that no one fully understands.<br>You deserve to feel held.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MISSION -->
+<div id="s-mission"></div>
+<div class="mission-section">
+  <div class="mission-inner">
+    <div class="mission-overline">Our mission</div>
+    <div class="mission-statement serif">To be the brand every woman reaches for the moment she finds out <em>she is carrying life.</em></div>
+    <div class="mission-rule"></div>
+    <p class="mission-body">We exist because pregnancy is one of the most profound experiences a human being can have — and for too long, it has been treated as something to manage rather than something to honour. FELŌRA was built to change that.</p>
+    <p class="mission-body">We walk every step of this journey with her — from the first heartbeat to the last push, and every quiet moment beyond.</p>
+    <div class="mission-pill" style="margin-top:36px;">FELŌRA · For she who carries life</div>
+  </div>
+</div>
+
+<!-- AUDIENCE -->
+<div class="section audience-section">
+  <div class="section-inner">
+    <div class="section-label">04 &nbsp;·&nbsp; Our woman</div>
+    <h2 class="section-h serif">She is not a demographic.<br><em>She is a feeling.</em></h2>
+    <div class="section-rule"></div>
+    <p class="body">FELŌRA exists for one woman — and she wears many faces. She is the first-time mama terrified and overjoyed. The career woman who won't slow down. The exhausted second-timer who knows what she needs. She is between 20 and 40. She shops on her phone at midnight. And she deserves better than the clinical products currently offered to her.</p>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="audience-icon">i</div>
+        <div class="audience-label">Who she is</div>
+        <div class="audience-desc">Pregnant women & new mothers, ages 20–40, primarily USA. She values quality, emotion, and brand story. She buys products that make her feel seen.</div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">ii</div>
+        <div class="audience-label">What she feels</div>
+        <div class="audience-desc">Back pain. Pelvic pressure. Exhaustion. Swelling. A body she no longer recognises. She is doing something extraordinary and she feels completely alone in it.</div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">iii</div>
+        <div class="audience-label">What she wants</div>
+        <div class="audience-desc">To feel held. To feel beautiful. To find products that speak to the sacredness of what her body is doing — not products that treat her like a medical condition.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<div id="s-product"></div>
+<div class="section product-section">
+  <div class="section-inner">
+    <div class="section-label">05 &nbsp;·&nbsp; What we sell</div>
+    <h2 class="section-h serif">Premium pregnancy care.<br><em>Positioned as ritual.</em></h2>
+    <div class="section-rule"></div>
+    <p class="body">Each FELŌRA product is not sold as a product — it is sold as a self-care ritual. The positioning is always emotional first, functional second. We source from trusted suppliers (CJdropshipping, Spocket, AliExpress 4.7★+), price at 3–8× markup, and present everything in our signature ivory gift packaging.</p>
+    <div class="product-grid">
+      <div class="product-card product-card-dark">
+        <div class="product-num">★</div>
+        <div class="product-name">Warmth & Relief Belt</div>
+        <div class="product-desc">Our hero product. USB-rechargeable, pregnancy-safe heat therapy belt. 3 temperature settings, auto-shutoff, breathable stretch fabric. Wearable under clothing. Designed for all trimesters.</div>
+        <div class="product-price-row">
+          <div class="product-price">$55.00</div>
+        </div>
+        <div class="product-cost">Landed cost: ~$8 &nbsp;·&nbsp; Sourced via AliExpress / Zendrop</div>
+        <div class="product-margin">~$47 margin · 86% gross</div>
+      </div>
+      <div class="product-card">
+        <div class="product-num">01</div>
+        <div class="product-name">U-Shape Pregnancy Pillow</div>
+        <div class="product-desc">Full-body bump pillow, premium memory foam, removable cover. The number-one requested gift from pregnant women worldwide.</div>
+        <div class="product-price-row"><div class="product-price">$75.00</div></div>
+        <div class="product-cost">Landed cost: ~$18 &nbsp;·&nbsp; Sourced via AliExpress</div>
+        <div class="product-margin">~$57 margin · 76% gross</div>
+      </div>
+      <div class="product-card">
+        <div class="product-num">02</div>
+        <div class="product-name">Belly Oil</div>
+        <div class="product-desc">Premium stretch mark prevention oil with rosehip, argan & vitamin E. Pregnancy-safe, dermatologist-reviewed formula.</div>
+        <div class="product-price-row"><div class="product-price">$28.00</div></div>
+        <div class="product-cost">Landed cost: ~$5 &nbsp;·&nbsp; CJdropshipping / Spocket ONLY</div>
+        <div class="product-margin">~$23 margin · 82% gross</div>
+      </div>
+      <div class="product-card product-card-dark">
+        <div class="product-num">03</div>
+        <div class="product-name">Comfort Bundle</div>
+        <div class="product-desc">Our highest-converting offer. Warmth Belt + Belly Oil + Compression Socks. Presented in signature FELŌRA gift packaging with a handwritten thank-you card.</div>
+        <div class="product-price-row"><div class="product-price">$95.00</div></div>
+        <div class="product-cost">Landed cost: ~$12 &nbsp;·&nbsp; Bundle of 3 products</div>
+        <div class="product-margin">~$83 margin · 87% gross</div>
+      </div>
+      <div class="product-card">
+        <div class="product-num">04</div>
+        <div class="product-name">Fetal Doppler</div>
+        <div class="product-desc">Hear your baby's heartbeat at home. Hospital-grade sensitivity, FDA compliant, includes gel. Sold as an intimate bonding experience.</div>
+        <div class="product-price-row"><div class="product-price">$65.00</div></div>
+        <div class="product-cost">Landed cost: ~$12 &nbsp;·&nbsp; AliExpress verified</div>
+        <div class="product-margin">~$53 margin · 81% gross</div>
+      </div>
+      <div class="product-card">
+        <div class="product-num">05</div>
+        <div class="product-name">Postpartum Recovery Belt</div>
+        <div class="product-desc">Gentle abdominal compression for postpartum healing. Supports the C-section recovery as well as vaginal birth. Extends the FELŌRA relationship beyond birth.</div>
+        <div class="product-price-row"><div class="product-price">$48.00</div></div>
+        <div class="product-cost">Landed cost: ~$8 &nbsp;·&nbsp; AliExpress verified</div>
+        <div class="product-margin">~$40 margin · 83% gross</div>
+      </div>
+    </div>
+    <div style="background:#EFE9E0;padding:28px 32px;margin-top:2px;">
+      <div style="font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#8B6F5E;margin-bottom:10px;">Quality rule</div>
+      <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:17px;font-style:italic;color:#2C2C2A;line-height:1.5;">Oils & skincare → CJdropshipping or Spocket <strong style="font-style:normal;font-weight:400;">ONLY.</strong> Physical products → AliExpress with 4.7★ minimum and 1,000+ orders. Always order a sample before selling.</div>
+    </div>
+  </div>
+</div>
+
+<!-- BRAND VOICE -->
+<div class="section voice-section">
+  <div class="section-inner">
+    <div class="section-label">06 &nbsp;·&nbsp; Brand voice</div>
+    <h2 class="section-h serif">We write like a luxury<br><em>wellness brand.</em></h2>
+    <div class="section-rule"></div>
+    <p class="body">Every word at FELŌRA is considered. We write with warmth, grace, and emotional intelligence. We never hype, never exaggerate, never cheapen. We speak to her like she deserves to be spoken to — with respect, beauty, and complete understanding of what she is going through.</p>
+    <div class="voice-grid">
+      <div class="voice-card voice-yes">
+        <div class="voice-header">We say this ✦</div>
+        <div class="voice-items">
+          <div class="voice-item"><span class="voice-marker">—</span>"Your body is doing something extraordinary."</div>
+          <div class="voice-item"><span class="voice-marker">—</span>"Held in comfort."</div>
+          <div class="voice-item"><span class="voice-marker">—</span>"For she who carries life."</div>
+          <div class="voice-item"><span class="voice-marker">—</span>"Relief that lets you breathe."</div>
+          <div class="voice-item"><span class="voice-marker">—</span>"You deserve to feel supported, not just coping."</div>
+        </div>
+      </div>
+      <div class="voice-card voice-no">
+        <div class="voice-header">Never this ✕</div>
+        <div class="voice-items">
+          <div class="voice-item"><span class="voice-marker">—</span>"Buy now before it sells out!!!"</div>
+          <div class="voice-item"><span class="voice-marker">—</span>"Amazing product 🔥🔥🔥"</div>
+          <div class="voice-item"><span class="voice-marker">—</span>"Limited time deal — 90% off!"</div>
+          <div class="voice-item"><span class="voice-marker">—</span>"The #1 bestselling pregnancy belt!"</div>
+          <div class="voice-item"><span class="voice-marker">—</span>"Act fast — only 3 left!!!"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MARKET NUMBERS -->
+<div class="numbers-section" style="padding:80px 48px;">
+  <div style="max-width:900px;margin:0 auto;">
+    <div class="section-label" style="color:rgba(196,168,130,.6);">07 &nbsp;·&nbsp; The opportunity</div>
+    <h2 class="section-h serif" style="color:#F7F3EE;">The numbers<br><em>are extraordinary.</em></h2>
+    <div class="section-rule" style="background:rgba(196,168,130,.3);"></div>
+    <p class="body" style="color:rgba(196,168,130,.6);max-width:580px;">The global maternity care market is enormous — and dramatically underserved by premium brands. FELŌRA enters at the exact moment that millennial and Gen Z mothers are demanding better.</p>
+    <div class="numbers-grid">
+      <div class="number-card">
+        <div class="number-value serif">$<em>21B</em></div>
+        <div class="number-label">Global maternity market</div>
+      </div>
+      <div class="number-card">
+        <div class="number-value serif"><em>140M</em></div>
+        <div class="number-label">Births per year worldwide</div>
+      </div>
+      <div class="number-card">
+        <div class="number-value serif"><em>85%</em></div>
+        <div class="number-label">Mamas with back pain</div>
+      </div>
+      <div class="number-card">
+        <div class="number-value serif">$<em>95</em></div>
+        <div class="number-label">FELŌRA average order value</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REVENUE PLAN -->
+<div id="s-revenue"></div>
+<div class="section revenue-section">
+  <div class="section-inner">
+    <div class="section-label">08 &nbsp;·&nbsp; 90-day revenue plan</div>
+    <h2 class="section-h serif">$0 to $100,000<br><em>in 90 days.</em></h2>
+    <div class="section-rule"></div>
+    <p class="body">The math is clear: 1,053 Comfort Bundle orders at $95 AOV = $100,000. With Meta ads converting at a conservative 2% and daily TikTok content driving organic traffic, this is a realistic and achievable target for a focused founder in 90 days.</p>
+    <div class="phase-grid">
+      <div class="phase-card phase-1">
+        <div class="phase-label">Phase one</div>
+        <div class="phase-days serif">Days 1–30</div>
+        <div class="phase-title">Build the machine</div>
+        <div class="phase-items">
+          <div class="phase-item">Shopify store live with all pages</div>
+          <div class="phase-item">Source & sample hero product (belt)</div>
+          <div class="phase-item">Import 3–5 products at launch</div>
+          <div class="phase-item">Set up Klaviyo email flows</div>
+          <div class="phase-item">Create all social handles @feloracare</div>
+          <div class="phase-item">Film 10 TikTok videos</div>
+          <div class="phase-item">Set up Meta Business Manager</div>
+        </div>
+        <div class="phase-goal serif">Goal: First 10 orders</div>
+      </div>
+      <div class="phase-card phase-2">
+        <div class="phase-label">Phase two</div>
+        <div class="phase-days serif">Days 31–60</div>
+        <div class="phase-title">First real sales</div>
+        <div class="phase-items">
+          <div class="phase-item">Launch Meta ads at $20/day</div>
+          <div class="phase-item">1 TikTok video per day</div>
+          <div class="phase-item">Run email welcome sequence</div>
+          <div class="phase-item">Collect first 20 reviews</div>
+          <div class="phase-item">Optimise product page conversion</div>
+          <div class="phase-item">Test 3 ad creatives per week</div>
+        </div>
+        <div class="phase-goal serif">Goal: $500/day revenue</div>
+      </div>
+      <div class="phase-card phase-3">
+        <div class="phase-label">Phase three</div>
+        <div class="phase-days serif" style="color:#F7F3EE;">Days 61–90</div>
+        <div class="phase-title">Scale to $100K</div>
+        <div class="phase-items">
+          <div class="phase-item">Scale Meta ads to $100/day</div>
+          <div class="phase-item">Launch affiliate/influencer program</div>
+          <div class="phase-item">Add Pinterest & Instagram ads</div>
+          <div class="phase-item">Launch Comfort Bundle as hero offer</div>
+          <div class="phase-item">Email campaigns to warm list</div>
+          <div class="phase-item">Expand to 10–12 products</div>
+        </div>
+        <div class="phase-goal serif" style="color:#C4A882;">Goal: $100,000 total</div>
+      </div>
+    </div>
+    <div style="background:#EFE9E0;padding:28px 32px;margin-top:2px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;text-align:center;">
+      <div style="padding:16px;">
+        <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;font-weight:300;color:#2C2C2A;">1,053</div>
+        <div style="font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#8B6F5E;margin-top:6px;">Bundle orders needed</div>
+      </div>
+      <div style="padding:16px;">
+        <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;font-weight:300;color:#2C2C2A;">$95</div>
+        <div style="font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#8B6F5E;margin-top:6px;">Average order value</div>
+      </div>
+      <div style="padding:16px;">
+        <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;font-weight:300;color:#2C2C2A;">$83</div>
+        <div style="font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#8B6F5E;margin-top:6px;">Gross profit per bundle</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PLATFORMS -->
+<div class="platform-section" style="padding:80px 48px;">
+  <div style="max-width:900px;margin:0 auto;">
+    <div class="section-label" style="color:rgba(196,168,130,.6);">09 &nbsp;·&nbsp; Digital presence</div>
+    <h2 class="section-h serif" style="color:#F7F3EE;">One brand.<br><em>Every channel.</em></h2>
+    <div class="section-rule" style="background:rgba(196,168,130,.28);"></div>
+    <p class="body" style="color:rgba(196,168,130,.6);">Every handle is secured as @feloracare. The domain is felora.care. The email is hello@felora.care. One consistent identity across every touchpoint — exactly as a global premium brand should operate from day one.</p>
+    <div class="platform-grid">
+      <div class="platform-card">
+        <div class="platform-handle serif">@feloracare</div>
+        <div class="platform-network">TikTok</div>
+      </div>
+      <div class="platform-card">
+        <div class="platform-handle serif">@feloracare</div>
+        <div class="platform-network">Instagram</div>
+      </div>
+      <div class="platform-card">
+        <div class="platform-handle serif">@feloracare</div>
+        <div class="platform-network">Pinterest</div>
+      </div>
+      <div class="platform-card">
+        <div class="platform-handle serif">felora.care</div>
+        <div class="platform-network">Shopify Store</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CLOSING -->
+<div class="closing">
+  <div class="closing-inner">
+    <div style="font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:rgba(139,111,94,.6);margin-bottom:28px;display:flex;align-items:center;justify-content:center;gap:16px;">
+      <span style="display:block;width:20px;height:1px;background:rgba(139,111,94,.3);"></span>
+      In closing
+      <span style="display:block;width:20px;height:1px;background:rgba(139,111,94,.3);"></span>
+    </div>
+    <div class="closing-h serif">She carries <em>everything.</em><br>FELŌRA carries <em>this.</em></div>
+    <p class="closing-body">FELŌRA is not just a product brand. It is a movement. It is a declaration that the women who bring new life into the world deserve to be treated with the same luxury, intention, and beauty that they give to the world. We are building the brand that every pregnant woman will reach for — and trust completely.</p>
+    <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:40px;">
+      <div style="border:1px solid rgba(139,111,94,.28);padding:12px 28px;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#8B6F5E;">felora.care</div>
+      <div style="border:1px solid rgba(139,111,94,.28);padding:12px 28px;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#8B6F5E;">hello@felora.care</div>
+      <div style="border:1px solid rgba(139,111,94,.28);padding:12px 28px;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#8B6F5E;">@feloracare</div>
+    </div>
+    <div class="closing-sig">— The FELŌRA founding team</div>
+    <div class="closing-contact">2026 · felora.care · For she who carries life</div>
+  </div>
+</div>
+
+</div>

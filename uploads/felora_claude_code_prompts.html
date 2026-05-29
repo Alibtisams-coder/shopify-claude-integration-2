@@ -1,0 +1,673 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font-sans);}
+.w{padding:.5rem 0;}
+.tabs{display:flex;gap:2px;margin-bottom:12px;flex-wrap:wrap;}
+.tab{padding:8px 16px;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);cursor:pointer;background:var(--color-background-primary);color:var(--color-text-tertiary);transition:all .15s;}
+.tab:hover{color:var(--color-text-primary);}
+.tab.on{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary);}
+.panel{display:none;}
+.panel.show{display:block;}
+.box{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;}
+.label{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:8px;}
+.text{padding:18px 20px;font-size:12.5px;line-height:1.86;color:var(--color-text-primary);white-space:pre-wrap;word-break:break-word;max-height:480px;overflow-y:auto;}
+.foot{background:var(--color-background-secondary);border-top:0.5px solid var(--color-border-tertiary);padding:10px 16px;display:flex;justify-content:space-between;align-items:center;}
+.foot span{font-size:10px;color:var(--color-text-tertiary);letter-spacing:.06em;text-transform:uppercase;}
+.btn{padding:8px 20px;background:var(--color-background-primary);border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);font-size:11px;font-weight:500;color:var(--color-text-primary);cursor:pointer;transition:all .15s;}
+.btn:hover{background:var(--color-background-secondary);}
+.btn.ok{background:#EAF3DE;border-color:#9FE1CB;color:#085041;}
+</style>
+<div class="w">
+<div class="tabs">
+  <div class="tab on" onclick="sw('p1',this)">Product Page</div>
+  <div class="tab" onclick="sw('p2',this)">Our Story</div>
+  <div class="tab" onclick="sw('p3',this)">Contact</div>
+  <div class="tab" onclick="sw('p4',this)">Blog / Journal</div>
+  <div class="tab" onclick="sw('p5',this)">Collections</div>
+  <div class="tab" onclick="sw('p6',this)">Size Guide</div>
+</div>
+
+<!-- PRODUCT PAGE -->
+<div class="panel show" id="p1">
+<div class="label">Product Page — The Nurture Pro™</div>
+<div class="box">
+<div class="text" id="t1">Build the product page for The Nurture Pro™ by FELŌRA.
+
+FELŌRA is a premium women's wellness brand. The voice is warm, poetic and intimate — it speaks directly to her, not about the product. Every section should make a nursing mama feel that this page was written entirely for her.
+
+DESIGN SYSTEM: Match the homepage exactly. Same fonts (Cormorant Garamond headings, Jost body), same colours (Noir #2C2C2A, Sand gold #C4A882, Ivory #F7F3EE, Terra #8B6F5E). Zero border radius everywhere. No emojis anywhere.
+
+---
+
+LEFT COLUMN — Product images
+Main image area with thumbnail gallery below.
+Aspect ratio portrait (0.9). Hover zoom.
+Side badge (vertical text, dark background): "New · 2026"
+
+---
+
+RIGHT COLUMN — in this exact order:
+
+EYEBROW (9px Jost uppercase gold line before):
+"The FELŌRA signature · Nursing Collection"
+
+HEADLINE (Cormorant Garamond, 3rem, weight 300):
+The Nurture Pro™
+
+SUBTITLE (Jost 9px uppercase terra):
+Double Wearable Electric Breast Pump · Hands Free · Whisper Quiet
+
+RATING ROW:
+★★★★★ in gold · "1,247 verified reviews" underlined · "4.9 / 5" in a bordered pill
+
+GOLD DIVIDER: 1px rgba(139,111,94,0.14)
+
+DESCRIPTION (Jost 13.5px line-height 2 terra weight 300):
+She does not stop.
+
+Not for the 6am feed. Not for the work call.
+Not for the school run. Not for the quiet
+moment she finally gets to herself.
+
+The Nurture Pro™ was designed around one
+truth — a nursing mama should never have
+to choose between feeding her baby and
+living her life.
+
+Wear it under your clothing. In a meeting.
+On a walk. While you make breakfast or
+simply sit and breathe.
+
+Double electric. Whisper quiet. Completely
+hands free. Your baby is nourished.
+Your life continues.
+
+This is what nursing should always
+have felt like.
+
+FEATURE BULLETS (gold dot, Jost 13px):
+· Double wearable — both sides simultaneously, completely hands free
+· Whisper quiet motor — discreet under any clothing, in any setting
+· 9 adjustable suction levels — find exactly what feels right for your body
+· USB rechargeable — wireless freedom, no cords, no pump station needed
+· Spill-proof 180ml collection cups — move freely without worry
+· Memory function — remembers your preferred settings automatically
+· BPA-free food grade materials — completely safe for you and your baby
+
+GOLD DIVIDER
+
+PRICE ROW:
+£230.00 (Cormorant 3rem weight 300) · £295.00 strikethrough in gold · "Save £65" in blush badge
+
+FLANGE NOTICE (small gold bordered box):
+"Not sure of your flange size? Email us at she@felora.care before ordering."
+
+ADD TO CART BUTTON (full width, Noir background, Ivory text, Jost 11px uppercase tracking 0.2em):
+"Add to Cart — £230.00"
+On hover: terra #8B6F5E slides in from left using ::after
+
+BUY NOW BUTTON (full width, ghost outline):
+"Buy Now — Express Checkout"
+
+ASSURANCE ICONS ROW (4 items, checkmark SVG in gold):
+Free UK shipping · 30-day guarantee · BPA free · Clinically safe
+
+GUARANTEE PILL (cream background, shield SVG):
+"30-day satisfaction guarantee — if The Nurture Pro™ does not feel exactly right, we make it right. Any questions — she@felora.care. We read every message."
+
+---
+
+SECTIONS BELOW PRODUCT (full width, in order):
+
+SECTION 1 — TRUST STRIP
+Dark noir background. 4 tiles in a grid with subtle tech grid overlay.
+Each tile has a gold circle icon, title and description:
+· Doctor informed — Reviewed by maternal health professionals
+· 30-day guarantee — No questions asked
+· Whisper quiet — Under 45 decibels
+· Hands free — Both sides simultaneously
+
+SECTION 2 — WHY THIS PRODUCT
+Ivory background. Two columns.
+Left: FELŌRA voice copy with comparison table (Other brands vs FELŌRA)
+Floating dark stat badge bottom-left: "1,247+ Mamas" animated float
+Right: Lifestyle image of mama wearing pump under clothing
+
+Headline: "She has been waiting for something this intentional."
+Body: For too long, nursing has meant stopping. Stopping work. Stopping movement. Stopping life. The Nurture Pro™ was built because she should never have had to stop anything.
+
+SECTION 3 — HOW IT WORKS
+Cream background. 3 steps horizontal.
+Step 01: Assemble — slip into your bra, no wires, completely discreet
+Step 02: Choose — select your mode and suction level
+Step 03: Live — walk, work, rest. Your baby is fed. Life continues.
+
+SECTION 4 — REVIEWS
+Ivory background. 4.9 overall rating displayed large in Cormorant Garamond.
+5 review cards in a grid. Each card: stars, verified badge, italic quote, customer name and detail.
+
+Use these quotes:
+"I wore this on a Zoom call with 14 people. Nobody knew. My baby was fed. I cried the good kind of tears afterwards." — Amara T. · 4 months postpartum · London
+"Elvie was £449. FELŌRA was £230 and arrived with packaging that made me feel seen before I even opened the box." — Jessica M. · 6 weeks postpartum · Manchester
+"I have tried three pumps. This is the only one I wore all day without discomfort." — Priya S. · 3 months postpartum · Birmingham
+"My mother-in-law bought this as a baby shower gift. It is the thing I use every single day." — Rachel O. · 5 months postpartum · Edinburgh
+"I travel for work. I pumped on a flight. In a taxi. During a client lunch. Nobody knew. FELŌRA gave me my career and my nursing journey at the same time." — Claire B. · Consultant · Dublin
+
+SECTION 5 — FAQ
+Ivory background. 6 accordion questions:
+Is it safe from birth?
+How quiet is it really?
+What is the battery life?
+Can I use one side at a time?
+Which flange size do I need?
+What is your return policy?
+
+SECTION 6 — FINAL CTA
+Blush background #E8D5C4. Centred.
+Headline (Cormorant 4rem): "She deserves this."
+Subtext (Jost 14px): Free UK shipping · 30-day guarantee · 1,247 mamas and counting.
+Button: "Add to Cart — £230.00" (dark noir)</div>
+<div class="foot"><span>Paste into Claude Code chat</span><button class="btn" onclick="cp('t1',this)">Copy Prompt</button></div>
+</div>
+</div>
+
+<!-- OUR STORY -->
+<div class="panel" id="p2">
+<div class="label">Our Story / About Page</div>
+<div class="box">
+<div class="text" id="t2">Build the Our Story page for FELŌRA.
+
+FELŌRA is a premium women's lifestyle brand built for every woman from the moment she says yes to life — through marriage, pregnancy, birth, postpartum, nursing and raising her child. The voice is warm, poetic and intimate. Every section honours her journey.
+
+Match the homepage design system exactly. Same fonts, colours, zero border radius, no emojis.
+
+---
+
+SECTION 1 — HERO (dark noir #2C2C2A background)
+With subtle tech grid overlay and gold radial glow.
+
+Eyebrow (Jost 9px uppercase gold): "Our story · FELŌRA 2026"
+
+Headline (Cormorant Garamond clamp(3rem,7vw,6.5rem) weight 300 ivory):
+"We were built for her."
+Italic gold em tag below: "From the very beginning."
+
+Subtext (Jost 14px weight 300 rgba(196,168,130,0.55) max-width 580px):
+FELŌRA was not built in a boardroom. It was not built by a corporation looking for a gap in the market. It was built because she deserved better — and someone finally decided to do something about it.
+
+Gold rule 44px. No CTA button in hero.
+
+---
+
+SECTION 2 — THE BEGINNING (ivory #F7F3EE background)
+Two columns. Gap 88px.
+
+Left column:
+Eyebrow: "How it began"
+Headline (Cormorant 3rem weight 300):
+"She was doing something extraordinary."
+Italic gold: "Nobody was honouring it."
+Gold rule.
+Body (Jost 14px weight 300 terra line-height 2):
+For too long, the maternity and nursing industry treated pregnancy as a condition to manage. Products were clinical. Packaging was functional. Copy was generic. Nobody spoke to her like she was the extraordinary person she was — carrying life, feeding life, giving everything she had.
+
+FELŌRA was built to change that. Not with a bigger marketing budget. With truth. With intention. With a brand that looks at her and says: we see you. This was made entirely for you.
+
+Right column:
+Large italic Cormorant pull quote in terra:
+"The brands that last are not the ones with the most money. They are the ones with the most truth."
+
+Below it: a floating dark card with the brand founding year and tagline.
+
+---
+
+SECTION 3 — OUR MISSION (cream #EFE9E0 background, centred)
+Eyebrow (centred with lines either side): "Our mission"
+Large headline centred (Cormorant 3.5rem weight 300):
+"To be the brand every woman reaches for"
+Italic gold em: "the moment she says yes to life."
+Gold rule centred.
+Body centred (Jost 14px max-width 640px):
+In all its forms. The moment she says yes at the altar. The moment she finds out. The moment she holds her baby for the first time. FELŌRA exists for every one of those moments — and every moment between.
+
+---
+
+SECTION 4 — THE JOURNEY (dark noir background)
+Eyebrow: "From yes to life — and beyond"
+Headline: "FELŌRA is there for all of it."
+Gold rule.
+
+Then a horizontal journey bar showing 6 steps with gold connecting line:
+She marries → She finds out → She carries → She births → She heals → She raises
+
+Each step has a Cormorant italic number and Jost label below.
+
+Below the journey bar — body copy (Jost 14px rgba(196,168,130,0.55)):
+No brand in the world owns this complete journey. Frida Mom owns postpartum. Kindred Bravely owns nursing. Baby brands own the baby. Nobody owns her entire story.
+
+FELŌRA does.
+
+---
+
+SECTION 5 — OUR VALUES (ivory background)
+Eyebrow: "What we will never compromise"
+Headline: "Five things FELŌRA stands for."
+Italic gold: "Always."
+
+5 cards in a grid (2+3 layout). Each card cream background, gold number, Cormorant title, Jost body:
+
+01 · Honesty
+We only promise what we can deliver. No inflated claims. No fake reviews. Our brand is built on truth.
+
+02 · Intentionality
+Every product decision begins with one question — does this make her feel held?
+
+03 · Premium without pretension
+FELŌRA is aspirational but never exclusionary. She deserves luxury regardless of her background.
+
+04 · She first, always
+Every decision is measured against one standard — is this good for her? Not for sales. For her.
+
+05 · Continuity
+We do not disappear after the birth. We are there for the healing, the nursing, the milestones, the raising. We stay.
+
+---
+
+SECTION 6 — FINAL CTA (blush #E8D5C4 background, centred)
+Headline (Cormorant 3.5rem): "Begin your FELŌRA journey."
+Italic gold em below: "She has been waiting."
+Subtext (Jost 14px): From the Nurture Pro™ to mama and baby matching nightwear — FELŌRA walks alongside her for every chapter.
+Button (noir full width max 360px centred): "Shop The Nurture Pro™ — £230"</div>
+<div class="foot"><span>Paste into Claude Code chat</span><button class="btn" onclick="cp('t2',this)">Copy Prompt</button></div>
+</div>
+</div>
+
+<!-- CONTACT -->
+<div class="panel" id="p3">
+<div class="label">Contact Page</div>
+<div class="box">
+<div class="text" id="t3">Build the Contact page for FELŌRA.
+
+Same design system as homepage. Cormorant Garamond headings, Jost body, FELŌRA colour palette. Zero border radius. No emojis. Voice is warm, intimate and personal — not corporate.
+
+---
+
+SECTION 1 — HERO (dark noir background, subtle tech grid)
+Eyebrow: "We are here · Always"
+Headline (Cormorant 4rem weight 300 ivory): "She reaches out."
+Italic gold em: "We always answer."
+Gold rule.
+Subtext (Jost 14px rgba(196,168,130,0.55)):
+Every message sent to FELŌRA is read by a real person who cares. We do not use bots. We do not use templates. We use her name. We answer properly. That is a promise.
+
+---
+
+SECTION 2 — CONTACT FORM + CARDS (ivory background)
+Two column layout. Gap 80px.
+
+LEFT COLUMN — Form:
+Eyebrow: "Send us a message"
+Headline (Cormorant 2.2rem): "She has something to say. We want to hear it."
+Gold rule.
+Subtext (Jost 13px terra): We aim to respond within 24 hours. For urgent order issues email carry@felora.care directly.
+
+Form fields (sharp edges, 1px border rgba(139,111,94,0.28), no border radius):
+· Name (full width)
+· Email address (full width)
+· Order number — optional (full width)
+· Subject dropdown: General enquiry · Order issue · Returns · Press · Wholesale · Other
+· Message (textarea, 5 rows)
+Submit button (full width noir): "Send Message"
+
+Below form — small note (Jost 10px terra):
+Your message goes directly to she@felora.care — a real inbox, read by real people.
+
+RIGHT COLUMN — Three contact cards (stacked, cream background, 1px border, 0px radius):
+
+Card 1:
+Gold SVG icon (envelope)
+Title (Cormorant 1.2rem): General Support
+Email: she@felora.care
+Description (Jost 12px): For product questions, sizing help, general enquiries and anything that does not fit elsewhere.
+Response time: Within 24 hours
+
+Card 2:
+Gold SVG icon (box)
+Title: Orders & Shipping
+Email: carry@felora.care
+Description: Track your order, report a delivery issue, request an exchange or manage your return.
+Response time: Same business day
+
+Card 3:
+Gold SVG icon (star)
+Title: Press & Partnerships
+Email: story@felora.care
+Description: For media enquiries, influencer collaboration, wholesale conversations and brand partnerships.
+Response time: Within 48 hours
+
+---
+
+SECTION 3 — QUICK ANSWERS (cream background)
+Eyebrow: "The questions she always asks"
+Headline (Cormorant 2.4rem): "Before you reach out — she might find her answer here."
+
+3 accordions (sharp edges, gold plus/minus toggle):
+Q: How long does shipping take to the UK?
+A: Every FELŌRA order ships within 1–3 business days. UK delivery takes 5–8 business days. You will receive tracking as soon as your order leaves us.
+
+Q: What is your return policy?
+A: We offer a 30-day satisfaction guarantee. For hygiene reasons, breast pumps must be unused and in original packaging. If your product is faulty we replace it immediately — no questions asked. Contact she@felora.care to begin.
+
+Q: How do I know which flange size is right for me?
+A: Measure the diameter of your nipple in millimetres — not your areola. Add 3–4mm. That is your size. Not sure? Email us before you order and we will help you find it.
+
+---
+
+SECTION 4 — FINAL ASSURANCE (dark noir background, centred)
+No headline needed. Just:
+
+A warm Cormorant italic centred quote in ivory:
+"Every question matters. Every mama matters. We will always answer."
+
+Below it — three trust signals in a horizontal row with gold icons:
+· Real people — no bots, no templates
+· 24 hour response — every business day
+· she@felora.care — always open</div>
+<div class="foot"><span>Paste into Claude Code chat</span><button class="btn" onclick="cp('t3',this)">Copy Prompt</button></div>
+</div>
+</div>
+
+<!-- BLOG -->
+<div class="panel" id="p4">
+<div class="label">Blog / The FELŌRA Journal</div>
+<div class="box">
+<div class="text" id="t4">Build the Blog / Journal page for FELŌRA. We call it "The FELŌRA Journal" — not blog.
+
+Same design system as homepage. FELŌRA voice: warm, poetic, intimate. Every post title should feel like something she wants to read at midnight. Not clinical advice. Her story, seen and honoured.
+
+---
+
+SECTION 1 — HERO (dark noir background)
+Eyebrow: "The FELŌRA Journal"
+Headline (Cormorant clamp(3rem,7vw,6rem) weight 300 ivory):
+"Stories for she who carries life."
+Italic gold em below: "Written entirely for her."
+Gold rule.
+Subtext (Jost 14px rgba(196,168,130,0.55) max-width 560px):
+Not advice columns. Not clinical guides. Real stories about the 2am moments, the aching back, the first latch, the matching nightwear, the things nobody warns you about — and the products that finally understand all of it.
+
+---
+
+SECTION 2 — FEATURED POST (ivory background)
+Large editorial featured article card. Full width. Two columns.
+Left: Featured image (lifestyle, warm tones, aspect ratio 1.1)
+Right: 
+  Category tag (Jost 8px uppercase gold): "Nursing · Featured"
+  Headline (Cormorant 2.4rem weight 300): "Why I wore my breast pump in a board meeting — and nobody knew."
+  Excerpt (Jost 14px weight 300 terra line-height 2): The day I went back to work was the day I thought my nursing journey would end. I was wrong. Here is what The Nurture Pro™ made possible.
+  Author + date (Jost 10px terra): FELŌRA Journal · May 2026
+  Read button (ghost outline): "Read her story →"
+
+---
+
+SECTION 3 — JOURNAL GRID (cream background)
+Eyebrow: "From the journal"
+Headline: "She is not alone in this."
+Italic gold: "Read her story."
+
+6 article cards in a 3-column grid (2 rows). Each card: 
+  Image top (aspect ratio 1.2)
+  Category tag (Jost 8px uppercase gold)
+  Title (Cormorant 1.3rem weight 400)
+  Excerpt (Jost 12px weight 300 terra 2 lines)
+  Read link with animated gold underline
+
+Card titles to use:
+1. "The 2am back ache nobody warned me about" — Pregnancy · Wellness
+2. "How I chose the right breast pump after three failed attempts" — Nursing · Product
+3. "Matching nightwear with my newborn changed how I felt about postpartum" — Postpartum · Style
+4. "What my body needed in the fourth trimester — and what FELŌRA gave me" — Postpartum · Recovery
+5. "The moment I found out: what I wish I had known" — Pregnancy · Emotional
+6. "Doctor informed vs clinically tested — what the difference actually means" — Wellness · Education
+
+---
+
+SECTION 4 — CATEGORIES (ivory background)
+Eyebrow: "Find what she needs"
+Headline: "Every chapter of her story."
+
+5 large category tiles in a horizontal scroll on mobile, grid on desktop:
+· Pregnancy — for she who is carrying
+· Nursing — for she who is nourishing  
+· Postpartum — for she who is healing
+· Motherhood — for she who is raising
+· Wellness — for she who is becoming
+
+Each tile: dark noir background, Cormorant italic title in ivory, gold accent line, hover lifts card.
+
+---
+
+SECTION 5 — EMAIL SIGNUP (dark noir background, centred)
+Eyebrow: "Stories delivered to her"
+Headline (Cormorant 3rem): "She found us."
+Italic gold: "Stay close."
+Subtext: New stories, early access and care for every chapter — in her inbox.
+Email input + "Join FELŌRA" button (Shopify contact form integration)</div>
+<div class="foot"><span>Paste into Claude Code chat</span><button class="btn" onclick="cp('t4',this)">Copy Prompt</button></div>
+</div>
+</div>
+
+<!-- COLLECTIONS -->
+<div class="panel" id="p5">
+<div class="label">Collections / Shop All Page</div>
+<div class="box">
+<div class="text" id="t5">Build the Collections / Shop All page for FELŌRA.
+
+Same design system as homepage. FELŌRA voice. Zero border radius. No emojis. The page should feel like a premium editorial lookbook — not a generic Shopify collection page.
+
+---
+
+SECTION 1 — HERO (dark noir background)
+Eyebrow: "The FELŌRA collection · 2026"
+Headline (Cormorant clamp(3rem,7vw,6rem) weight 300 ivory):
+"Everything she deserves."
+Italic gold em: "In one place."
+Gold rule.
+Subtext (Jost 14px rgba(196,168,130,0.55)):
+From the moment she says yes to life — through pregnancy, nursing, postpartum and beyond. Every product in the FELŌRA collection was chosen for one reason: because she deserves it.
+
+---
+
+SECTION 2 — CATEGORY NAVIGATION (ivory background)
+Eyebrow: "Shop by her chapter"
+5 editorial category tiles in a 5-column grid (scroll on mobile):
+
+Tile 1: Comfort & Wellness
+Dark background, Cormorant title, subtext: "For the aching back at 2am"
+
+Tile 2: Mama & Baby Nightwear
+Dark background, title, subtext: "The most shareable moment of motherhood"
+
+Tile 3: Books & Education  
+Dark background, title, subtext: "For she who wants to understand"
+
+Tile 4: Bridal & Early Marriage
+Dark background, title, subtext: "From the moment she says yes"
+
+Tile 5: Gift Sets & Bundles
+Dark background, title, subtext: "For the mama she loves"
+
+---
+
+SECTION 3 — PRODUCT GRID (cream background)
+Eyebrow: "The full collection"
+Headline: "For every chapter of her story."
+
+Product cards in a 3-column grid (1 on mobile, 2 on tablet):
+
+Each product card:
+- Image (aspect ratio 0.92, hover zoom to 1.04)
+- Category tag (Jost 8px uppercase gold)
+- Product name (Cormorant 1.2rem weight 400)
+- Short description (Jost 12px terra 1 line)
+- Price (Cormorant 1.3rem weight 300)
+- Compare at price (gold strikethrough if exists)
+- "Shop now →" link with animated gold line
+
+Show these products:
+1. The Nurture Pro™ — £230 — Double Wearable Electric Breast Pump · Nursing & Postpartum
+2. The Carry Belt™ — £55 — Premium Pregnancy Support Belt · Comfort & Wellness
+3. Mama & Baby Matching Set — Coming soon — Coordinated Nightwear · Nightwear
+4. The She Found Out Box — Coming soon — New Pregnancy Gift Set · Gifting
+5. Baby's First Year — Coming soon — Educational Book · Books
+6. New Mama Recovery Bundle — Coming soon — Postpartum Care Set · Gifting
+
+For coming soon products: grey out the price, show "Coming soon — Join waitlist" instead of add to cart.
+
+---
+
+SECTION 4 — EDITORIAL STRIP (dark noir, full bleed)
+No headline. Just a large Cormorant italic centred quote in ivory:
+
+"She does not buy a product.
+She joins a brand that was built
+entirely because she deserves it."
+
+Gold rule centred below.
+Small Jost text: felora.care · For she who carries life.
+
+---
+
+SECTION 5 — FINAL CTA (blush background, centred)
+Headline: "Start with The Nurture Pro™."
+Italic gold: "She will not regret it."
+Subtext: Free UK shipping · 30-day guarantee · 1,247 mamas and counting.
+Button (noir): "Shop now — £230.00"</div>
+<div class="foot"><span>Paste into Claude Code chat</span><button class="btn" onclick="cp('t5',this)">Copy Prompt</button></div>
+</div>
+</div>
+
+<!-- SIZE GUIDE -->
+<div class="panel" id="p6">
+<div class="label">Size Guide Page</div>
+<div class="box">
+<div class="text" id="t6">Build the Size Guide page for FELŌRA.
+
+Same design system. FELŌRA voice — warm, reassuring, personal. She should feel guided, not confused. Every instruction should feel like it is coming from someone who genuinely wants to help her get it right.
+
+---
+
+SECTION 1 — HERO (dark noir background, minimal)
+Eyebrow: "Getting it right · For her"
+Headline (Cormorant 3.5rem weight 300 ivory): "The right fit changes everything."
+Gold rule.
+Subtext (Jost 14px rgba(196,168,130,0.55)):
+An incorrect flange size is the most common reason nursing mamas stop pumping early. We want her to get it right the first time. This guide is here to make sure she does.
+
+---
+
+SECTION 2 — FLANGE SIZE GUIDE (ivory background)
+Eyebrow: "The Nurture Pro™ · Flange sizing"
+Headline: "How to measure. In 60 seconds."
+
+Step-by-step instructions (numbered, Cormorant numbers large, Jost body):
+
+Step 01 — Measure your nipple
+Use a ruler or soft tape measure. Measure the diameter of your nipple only — not the areola around it. Measure in millimetres.
+
+Step 02 — Add 3 to 4 millimetres
+This gives you your optimal flange size. For example: nipple diameter 18mm + 3mm = 21mm flange.
+
+Step 03 — Choose your size
+Match your measurement to the size chart below.
+
+SIZE CHART (table, sharp borders 1px rgba(139,111,94,0.18)):
+Nipple diameter | Recommended flange | Fits best for
+Up to 16mm | 17mm flange | Petite
+17–18mm | 19mm flange | Small
+19–20mm | 21mm flange | Average
+21–23mm | 24mm flange | Standard
+24mm+ | 27mm flange | Larger
+
+Below table (Jost 12px terra italic):
+Between sizes? Always size up. A flange that is too small is more uncomfortable than one that is slightly too large.
+
+---
+
+SECTION 3 — NOT SURE? (cream background, two columns)
+Left:
+Eyebrow: "Still unsure?"
+Headline (Cormorant 2rem): "She can always ask us first."
+Gold rule.
+Body (Jost 14px weight 300):
+Sizing is personal. Every body is different. If her measurement sits between two sizes or she is simply not sure, she should email us before ordering. We will help her find her exact fit — personally.
+
+Email (Jost 14px gold): she@felora.care
+Response time: within 24 hours
+
+Button (ghost outline): "Email us before ordering"
+
+Right:
+Signs of correct flange fit (Cormorant title, Jost list, gold tick icons):
+✦ Nipple moves freely in the tunnel with no rubbing
+✦ No areola tissue is being pulled in
+✦ No pain or discomfort during pumping
+✦ Full milk expression in 15–20 minutes
+
+Signs the flange is too small (red-adjacent warning — use terra colour, not red):
+✦ Nipple rubs the sides of the tunnel
+✦ Pain or pinching during pumping
+✦ White ring around the base of the nipple after use
+
+---
+
+SECTION 4 — CARRY BELT SIZE GUIDE (ivory background)
+Eyebrow: "The Carry Belt™ · Sizing"
+Headline: "A belt that grows with her bump."
+
+Table (sharp borders):
+Size | Lower abdomen circumference | Trimester guide
+S    | 70 – 80cm                   | Early second trimester
+M    | 80 – 90cm                   | Mid second trimester
+L    | 90 – 105cm                  | Late second trimester
+XL   | 105 – 120cm                 | Third trimester
+2XL  | 120 – 140cm                 | Late third trimester / postpartum
+
+Below (Jost 12px terra):
+Between sizes? Always size up. The velcro fastening allows adjustment as her bump grows, so a slightly larger size will serve her for longer.
+
+---
+
+SECTION 5 — FINAL CTA (dark noir background, centred)
+Headline (Cormorant 2.4rem ivory): "Now she knows her size."
+Italic gold em: "She is ready."
+Button (sand gold background noir text): "Shop The Nurture Pro™ — £230"
+Below: she@felora.care · We answer every sizing question personally.</div>
+<div class="foot"><span>Paste into Claude Code chat</span><button class="btn" onclick="cp('t6',this)">Copy Prompt</button></div>
+</div>
+</div>
+
+</div>
+<script>
+function sw(id,tab){
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('show');});
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on');});
+  document.getElementById(id).classList.add('show');
+  tab.classList.add('on');
+}
+function cp(id,btn){
+  var text=document.getElementById(id).innerText;
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(text).then(function(){
+      btn.textContent='✓ Copied!';btn.classList.add('ok');
+      setTimeout(function(){btn.textContent='Copy Prompt';btn.classList.remove('ok');},2500);
+    });
+  } else {
+    var ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;opacity:0;';
+    document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
+    btn.textContent='✓ Copied!';btn.classList.add('ok');
+    setTimeout(function(){btn.textContent='Copy Prompt';btn.classList.remove('ok');},2500);
+  }
+}
+</script>

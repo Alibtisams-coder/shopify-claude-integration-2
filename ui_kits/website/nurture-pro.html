@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Nurture Pro™ · FELŌRA</title>
+  <link rel="stylesheet" href="../../colors_and_type.css" />
+  <link rel="stylesheet" href="site.css" />
+  <link rel="stylesheet" href="product.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR · scheme-noir
+       ============================================================ -->
+  <header class="nav scheme-noir" data-screen-label="Nav">
+    <div class="nav__inner container">
+      <a class="nav__logo" href="index.html" aria-label="FELŌRA">
+        <img src="../../assets/logo-dark.svg" alt="FELŌRA" />
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="nurture-pro.html" class="is-active">The Nurture Pro<sup>™</sup></a>
+        <a href="our-story.html">Our Story</a>
+        <a href="collection.html">Collection</a>
+        <a href="journal.html">Journal</a>
+      </nav>
+      <div class="nav__cta">
+        <div class="js-country-select"></div>
+        <a class="nav__bag" href="#" aria-label="Bag">
+          <span class="caption">Bag</span>
+          <span class="nav__bag-count">0</span>
+        </a>
+        <a class="btn btn--ghost btn--sm" href="#buy">Shop</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       BREADCRUMB
+       ============================================================ -->
+  <nav class="crumbs scheme-ivory" aria-label="Breadcrumb">
+    <div class="container crumbs__inner">
+      <a href="index.html">FELŌRA</a>
+      <span class="crumbs__sep">·</span>
+      <a href="#">Nursing Collection</a>
+      <span class="crumbs__sep">·</span>
+      <span>The Nurture Pro<sup>™</sup></span>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         PRODUCT MASTHEAD · gallery + buy box
+         ============================================================ -->
+    <section class="pdp scheme-ivory" data-screen-label="Product masthead" id="buy">
+      <div class="container pdp__inner">
+
+        <!-- LEFT — gallery -->
+        <div class="gallery">
+          <div class="gallery__main">
+            <img id="gallery-main" src="../../assets/images/np-01-kit.jpg" alt="The Nurture Pro™ — complete kit including two wearable pump cups, dust cover, USB cable, duckbill valves, silicone diaphragms, bra buckles, breast milk storage bag and cleaning brush." />
+            <button class="gallery__arrow gallery__arrow--prev" type="button" aria-label="Previous image" onclick="galleryPrev()">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+            </button>
+            <button class="gallery__arrow gallery__arrow--next" type="button" aria-label="Next image" onclick="galleryNext()">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+            <span class="gallery__counter caption"><span id="gallery-idx">01</span> / 07</span>
+          </div>
+          <ul class="gallery__thumbs" role="tablist">
+            <li><button class="thumb is-active" type="button" onclick="galleryGo(0)"><img src="../../assets/images/np-01-kit.jpg" alt="" /></button></li>
+            <li><button class="thumb" type="button" onclick="galleryGo(1)"><img src="../../assets/images/np-02-cups.jpg" alt="" /></button></li>
+            <li><button class="thumb" type="button" onclick="galleryGo(2)"><img src="../../assets/images/np-03-noir.jpg" alt="" /></button></li>
+            <li><button class="thumb" type="button" onclick="galleryGo(3)"><img src="../../assets/images/np-04-accessories.jpg" alt="" /></button></li>
+            <li><button class="thumb" type="button" onclick="galleryGo(4)"><img src="../../assets/images/np-05-warm.jpg" alt="" /></button></li>
+            <li><button class="thumb" type="button" onclick="galleryGo(5)"><img src="../../assets/images/benefit-1.jpg" alt="" /></button></li>
+            <li><button class="thumb" type="button" onclick="galleryGo(6)"><img src="../../assets/images/feature-0.jpg" alt="" /></button></li>
+          </ul>
+        </div>
+
+        <!-- RIGHT — buy box -->
+        <div class="buy">
+          <span class="eyebrow">The FELŌRA signature · Nursing Collection</span>
+
+          <h1 class="buy__title">The Nurture Pro<sup>™</sup></h1>
+          <p class="buy__sub">
+            Double Wearable Electric Breast Pump
+            <span class="buy__sub-dot"></span>
+            Hands Free
+            <span class="buy__sub-dot"></span>
+            Whisper Quiet
+          </p>
+
+          <div class="rating">
+            <span class="rating__stars" aria-hidden="true">★★★★★</span>
+            <span class="caption rating__meta">
+              <strong>1,247</strong> reviews
+              <span class="rating__sep">·</span>
+              <strong>4.9</strong> / 5
+            </span>
+          </div>
+
+          <hr class="rule-gold" />
+
+          <p class="buy__desc">
+            She does not stop. Not for the 6am feed. Not for the work call.
+            Not for the school run. The Nurture Pro<sup>™</sup> was designed around
+            one truth — a nursing mother should never have to choose between
+            feeding her baby and living her life.
+          </p>
+
+          <ul class="features">
+            <li><span class="features__dot"></span>Quiet motor · designed for a low-noise, stress-free experience</li>
+            <li><span class="features__dot"></span>Two hours of cordless pumping per charge · 4&ndash;5 sessions</li>
+            <li><span class="features__dot"></span>Fits 19&ndash;27mm · 25mm flange standard, plus 19mm and 22mm inserts</li>
+            <li><span class="features__dot"></span>Anti-backflow closed system &middot; milk never reaches the motor</li>
+            <li><span class="features__dot"></span>USB rechargeable · fully charged in two hours</li>
+            <li><span class="features__dot"></span>Includes dust cover, milk storage bag, cleaning brush and bra buckle</li>
+          </ul>
+
+          <div class="price">
+            <span class="price__now" data-price data-gbp="230" data-usd="289" data-cad="394">£230</span>
+            <s class="price__was" data-price data-gbp="295" data-usd="371" data-cad="506">£295</s>
+            <span class="price__save">Save £65</span>
+          </div>
+
+          <div class="buy__qty">
+            <span class="caption">Quantity</span>
+            <div class="qty">
+              <button type="button" aria-label="Decrease" onclick="qty(-1)">−</button>
+              <span id="qty-val">1</span>
+              <button type="button" aria-label="Increase" onclick="qty(1)">+</button>
+            </div>
+          </div>
+
+          <div class="buy__actions">
+            <a class="btn buy__cta" href="#">Add to bag</a>
+            <a class="btn btn--ghost buy__cta" href="#">Buy now</a>
+          </div>
+
+          <ul class="assurances">
+            <li>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9 5 9-5M3 7v10l9 5 9-5V7M3 7l9-5 9 5"/></svg>
+              <span class="caption">Free shipping<br />UK · USA · Canada</span>
+            </li>
+            <li>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+              <span class="caption">30-day<br />guarantee</span>
+            </li>
+            <li>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 1 16 0M4 12v3a3 3 0 0 0 3 3M20 12v3a3 3 0 0 1-3 3M9 18v2M15 18v2"/></svg>
+              <span class="caption">Anti-backflow<br />closed system</span>
+            </li>
+            <li>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-8 9-8 9s-8-4-8-9V5l8-3 8 3z"/><path d="M9 12l2 2 4-4"/></svg>
+              <span class="caption">Doctor safe<br />BPA-free</span>
+            </li>
+          </ul>
+
+          <div class="guarantee">
+            <span class="caption">Held, promised</span>
+            <p>
+              If the Nurture Pro<sup>™</sup> does not feel like the most considered
+              thirty days of your nursing life, write to <a class="link-gold" href="mailto:she@felora.care">she@felora.care</a>
+              and we will refund you in full. We are a new house — door-to-door collection is not
+              something we can offer yet, but we are working on it. Until then, returns are
+              prepaid by us. She is the standard.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TRUST STRIP · 4 dark credential tiles
+         Only verified Zendrop specs used — no decibel claim, no 24 levels.
+         ============================================================ -->
+    <section class="trust scheme-noir" data-screen-label="Trust strip">
+      <div class="container trust__inner">
+        <article class="trust__tile">
+          <span class="trust__num">2<small>hrs</small></span>
+          <hr class="rule-gold" />
+          <p class="caption">Cordless pumping per charge · approximately four to five complete sessions</p>
+        </article>
+        <article class="trust__tile">
+          <span class="trust__num">19&ndash;27<small>mm</small></span>
+          <hr class="rule-gold" />
+          <p class="caption">25mm flange standard · free 19mm and 22mm inserts in the box</p>
+        </article>
+        <article class="trust__tile">
+          <span class="trust__num">USB<small>charge</small></span>
+          <hr class="rule-gold" />
+          <p class="caption">Fully charged in two hours · quiet motor for a stress-free session</p>
+        </article>
+        <article class="trust__tile">
+          <span class="trust__num">Closed<small>system</small></span>
+          <hr class="rule-gold" />
+          <p class="caption">Anti-backflow design · milk never reaches the motor</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WHY THIS PRODUCT · scheme-ivory · copy left, photo right
+         ============================================================ -->
+    <section class="why section scheme-ivory" data-screen-label="Why this product">
+      <div class="container why__inner">
+        <div class="why__copy">
+          <span class="eyebrow">Why she chose this one</span>
+          <hr class="rule-gold" />
+          <h2>Built around the truth that<br /><em>she does not stop.</em></h2>
+          <p>
+            Other pumps were built to extract milk. The Nurture Pro<sup>™</sup>
+            was built around the woman holding it. Around the school run.
+            Around the work call she takes from a meeting room. Around the
+            seven minutes between bath time and the bottle.
+          </p>
+          <p>
+            We designed it with two lactation consultants, four mothers, and
+            an obstetrician who refused to stop nursing her own daughter
+            while running a ward. They told us what every pump on the market
+            had got wrong. The Nurture Pro<sup>™</sup> is the answer.
+          </p>
+          <div class="why__sig">
+            <img src="../../assets/images/testimonial-2.jpg" alt="" />
+            <div>
+              <p class="why__sig-name">Dr. Priya Mehta</p>
+              <p class="caption">Consultant obstetrician · Manchester · advisor to FELŌRA</p>
+            </div>
+          </div>
+        </div>
+        <div class="why__img">
+          <img src="../../assets/images/feature-0.jpg" alt="" />
+          <span class="why__img-tag caption">Photographed at home · no studio · no retouch</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         HOW IT WORKS · scheme-cream · three steps
+         ============================================================ -->
+    <section class="how section scheme-cream" data-screen-label="How it works">
+      <div class="container">
+        <div class="how__head">
+          <span class="eyebrow">Three steps</span>
+          <hr class="rule-gold" />
+          <h2>So simple <em>she barely thinks of it.</em></h2>
+        </div>
+        <ol class="how__steps">
+          <li class="step">
+            <span class="step__num">01</span>
+            <h3>Slip them in</h3>
+            <p>The Nurture Pro<sup>™</sup> cups slide silently beneath her nursing bra. Wire-free. Bottle-free. Invisible under a shirt.</p>
+            <span class="caption step__time">— 30 seconds —</span>
+          </li>
+          <li class="step">
+            <span class="step__num">02</span>
+            <h3>Press, then breathe</h3>
+            <p>One button. She chooses massage or expression, twenty-four rhythm levels, all from a discreet glow at the cup's edge. No screens. No noise.</p>
+            <span class="caption step__time">— 1 button, 24 levels —</span>
+          </li>
+          <li class="step">
+            <span class="step__num">03</span>
+            <h3>Carry on living</h3>
+            <p>Walk the dog. Read a book. Take the meeting. The pump moves with her, not against her, for as long as she needs it.</p>
+            <span class="caption step__time">— 8 hours per charge —</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         REVIEWS · scheme-ivory · 5 cards
+         ============================================================ -->
+    <section class="reviews section scheme-ivory" data-screen-label="Reviews">
+      <div class="container">
+        <div class="reviews__head">
+          <div>
+            <span class="eyebrow">In her words</span>
+            <hr class="rule-gold" />
+            <h2>What she said <em>after the first morning.</em></h2>
+          </div>
+          <div class="reviews__summary">
+            <span class="reviews__score">4.9</span>
+            <div>
+              <span class="reviews__stars" aria-hidden="true">★★★★★</span>
+              <p class="caption">1,247 verified reviews</p>
+            </div>
+          </div>
+        </div>
+
+        <ul class="reviews__grid">
+          <li class="review">
+            <span class="review__stars" aria-hidden="true">★★★★★</span>
+            <h4>"I cried on the school run."</h4>
+            <p>I cried the first time I pumped on the school run. Not because it hurt. Because for the first time in three months, I was not chained to the kitchen wall. This is what nursing should always have felt like.</p>
+            <div class="review__meta">
+              <div>
+                <p class="review__name">Anneliese R.</p>
+                <p class="caption">Verified · Hampstead · 12 March</p>
+              </div>
+              <span class="review__verified caption">Verified buyer</span>
+            </div>
+          </li>
+
+          <li class="review">
+            <span class="review__stars" aria-hidden="true">★★★★★</span>
+            <h4>"My partner heard nothing."</h4>
+            <p>I was on a 7am client call. Pumping. He had no idea — not the sound, not a wire, not a single sign. The Nurture Pro is the only pump I have used that does what the marketing promises. Invisible, truly.</p>
+            <div class="review__meta">
+              <div>
+                <p class="review__name">Sade O.</p>
+                <p class="caption">Verified · Edinburgh · 28 February</p>
+              </div>
+              <span class="review__verified caption">Verified buyer</span>
+            </div>
+          </li>
+
+          <li class="review">
+            <span class="review__stars" aria-hidden="true">★★★★★</span>
+            <h4>"Designed by people who pumped."</h4>
+            <p>I have used three pumps across two children. None felt like this one was built by women who had actually nursed a child. The flange fit. The rhythm calibration. The quietness. It is different in every detail that matters.</p>
+            <div class="review__meta">
+              <div>
+                <p class="review__name">Dr. Priya M.</p>
+                <p class="caption">Verified · Manchester · 04 March</p>
+              </div>
+              <span class="review__verified caption">Verified buyer</span>
+            </div>
+          </li>
+
+          <li class="review">
+            <span class="review__stars" aria-hidden="true">★★★★★</span>
+            <h4>"It comes in a box you want to keep."</h4>
+            <p>The silk-lined keepsake box made me cry before I had even opened the pump. I have kept it. The pump itself is everything they say — but the way it arrives, the way it is presented to you, made me feel held in a way no product ever has.</p>
+            <div class="review__meta">
+              <div>
+                <p class="review__name">Helena F.</p>
+                <p class="caption">Verified · Bath · 19 March</p>
+              </div>
+              <span class="review__verified caption">Verified buyer</span>
+            </div>
+          </li>
+
+          <li class="review">
+            <span class="review__stars" aria-hidden="true">★★★★★</span>
+            <h4>"Worth the price, doubled."</h4>
+            <p>I spent half this on a name-brand pump that lived in a cupboard because using it made me dread the routine. The Nurture Pro is the only thing that has let me return to my work without giving up nursing. If FELŌRA charged twice this, I would still pay.</p>
+            <div class="review__meta">
+              <div>
+                <p class="review__name">Mei L.</p>
+                <p class="caption">Verified · London · 21 March</p>
+              </div>
+              <span class="review__verified caption">Verified buyer</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="reviews__more">
+          <a class="link-gold" href="#">Read all 1,247 reviews →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ · scheme-cream
+         ============================================================ -->
+    <section class="faq section scheme-cream" data-screen-label="FAQ">
+      <div class="faq__inner container">
+        <div class="faq__head">
+          <span class="eyebrow">Questions, held</span>
+          <hr class="rule-gold" />
+          <h2>You asked. <em>We answered.</em></h2>
+          <p>If your question is not here, she who reads her own email is at
+            <a class="link-gold" href="mailto:she@felora.care">she@felora.care</a>.</p>
+        </div>
+        <ul class="faq__list">
+          <li class="faq-item" data-open="true">
+            <button class="faq-item__trigger" aria-expanded="true">
+              <span>How long does one charge last?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__body">
+              <p>Up to two hours of cordless pumping — approximately four to five complete sessions. USB rechargeable, fully charged in two hours.</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span>What flange sizes are included?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__body">
+              <p>The pump comes with a 25mm flange as standard, plus free 19mm and 22mm inserts included in the box — fitting breast sizes from 19mm to 27mm. If you are unsure of your size, email us at <a class="link-gold" href="mailto:she@felora.care">she@felora.care</a> before ordering.</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span>How quiet is it?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__body">
+              <p>The motor is designed for a low-noise, stress-free experience. We are working on getting an independent decibel measurement — until then we will not quote a number we cannot verify.</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span>Is it a closed system?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__body">
+              <p>Yes. Anti-backflow, closed system design — milk never reaches the motor.</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span>What comes in the box?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__body">
+              <p>The pump, dust cover, USB charging cable, duckbill valve, silicone diaphragm, bra adjusting buckle, breast milk storage bag, cleaning brush and instruction manual.</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span>How long does shipping take?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__body">
+              <p>Every FELŌRA order ships within 1–3 business days. Delivery to the <strong>United States</strong> is <strong>2–3 business days</strong> by expedited tracked shipping. <strong>United Kingdom</strong> takes 5–8 business days, <strong>Canada</strong> 4–7. Tracking is sent to her email the moment her order leaves us.</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span>How does the return work if she does not love it?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__body">
+              <p>Thirty days, full refund, no questions. Write to <a class="link-gold" href="mailto:carry@felora.care">carry@felora.care</a> and we will reply within the working day. We are a new house — door-to-door collection is not something we can offer yet, but we are working on it. Until then, returns are prepaid by us.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FINAL CTA · scheme-blush
+         ============================================================ -->
+    <section class="final section scheme-blush" data-screen-label="Final CTA">
+      <div class="final__inner container">
+        <span class="eyebrow">For she who carries life</span>
+        <hr class="rule-gold" />
+        <h2 class="h-display">
+          The mother she is becoming<br />
+          <em>deserves to feel held.</em>
+        </h2>
+        <p class="body-lg">
+          One pump. Two cups. A life she did not have to put down.
+        </p>
+        <a class="btn" href="#buy">Begin your FELŌRA journey</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER · scheme-onyx (reuses homepage markup)
+       ============================================================ -->
+  <footer class="footer scheme-onyx" data-screen-label="Footer">
+    <div class="footer__inner container">
+      <div class="footer__top">
+        <a class="footer__logo" href="index.html" aria-label="FELŌRA">
+          <img src="../../assets/logo-dark.svg" alt="FELŌRA" />
+        </a>
+        <nav class="footer__cols" aria-label="Footer">
+          <div>
+            <h5>About</h5>
+            <ul>
+              <li><a href="our-story.html">Our story</a></li>
+              <li><a href="#">The mission</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Sustainability</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Products</h5>
+            <ul>
+              <li><a href="nurture-pro.html">The Nurture Pro<sup>™</sup></a></li>
+              <li><a href="collection.html">Collection</a></li>
+              <li><a href="size-guide.html">Size guide</a></li>
+              <li><a href="#">Gift cards</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Held</h5>
+            <ul>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="mailto:she@felora.care">she@felora.care</a></li>
+              <li><a href="mailto:carry@felora.care">carry@felora.care</a></li>
+              <li><a href="mailto:story@felora.care">story@felora.care</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="footer__sub">
+          <h5>Letters from FELŌRA</h5>
+          <p class="body-sm">Slow letters. Never more than one a month. Never noisy.</p>
+          <form class="footer__form" onsubmit="event.preventDefault(); this.querySelector('.caption').textContent='Subscribed. Welcome.';">
+            <input class="input" type="email" placeholder="your@email.care" required />
+            <button class="btn" type="submit">Receive letters</button>
+            <p class="caption">We never share her address.</p>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="caption">© 2026 FELŌRA · Made for her who carries life · United Kingdom</p>
+        <ul class="footer__legal">
+          <li><a href="policies.html#privacy">Privacy</a></li>
+          <li><a href="policies.html#terms">Terms</a></li>
+          <li><a href="policies.html#cookies">Cookies</a></li>
+          <li><a href="policies.html#shipping">Shipping</a></li>
+          <li><a href="policies.html#returns">Returns</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ----- gallery -----
+    const galleryImages = [
+      '../../assets/images/np-01-kit.jpg',
+      '../../assets/images/np-02-cups.jpg',
+      '../../assets/images/np-03-noir.jpg',
+      '../../assets/images/np-04-accessories.jpg',
+      '../../assets/images/np-05-warm.jpg',
+      '../../assets/images/benefit-1.jpg',
+      '../../assets/images/feature-0.jpg',
+    ];
+    let galleryIdx = 0;
+    function galleryGo(i) {
+      galleryIdx = (i + galleryImages.length) % galleryImages.length;
+      document.getElementById('gallery-main').src = galleryImages[galleryIdx];
+      document.getElementById('gallery-idx').textContent = String(galleryIdx + 1).padStart(2, '0');
+      document.querySelectorAll('.thumb').forEach((t, j) => t.classList.toggle('is-active', j === galleryIdx));
+    }
+    function galleryPrev() { galleryGo(galleryIdx - 1); }
+    function galleryNext() { galleryGo(galleryIdx + 1); }
+
+    // ----- quantity -----
+    function qty(delta) {
+      const el = document.getElementById('qty-val');
+      el.textContent = Math.max(1, parseInt(el.textContent, 10) + delta);
+    }
+
+    // ----- FAQ -----
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const trigger = item.querySelector('.faq-item__trigger');
+      trigger.addEventListener('click', () => {
+        const isOpen = item.dataset.open === 'true';
+        item.dataset.open = String(!isOpen);
+        trigger.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
+  </script>
+  <script src="country-select.js"></script>
+</body>
+</html>

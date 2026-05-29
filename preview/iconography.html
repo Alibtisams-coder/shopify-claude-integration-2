@@ -1,0 +1,125 @@
+<!doctype html>
+<html><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="card.css" />
+<style>
+  .icons {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    color: var(--felora-noir);
+    margin-top: 6px;
+    min-height: 32px;
+  }
+  .icons svg {
+    overflow: visible;
+  }
+  /* Each path draws itself in, holds, fades, repeats. Slow, intentional. */
+  .icons path,
+  .icons circle {
+    stroke-dasharray: var(--len, 120);
+    stroke-dashoffset: var(--len, 120);
+    animation:
+      draw 5.6s var(--ease-felora) infinite,
+      breathe 5.6s var(--ease-felora) infinite;
+  }
+  @property --ease-felora { syntax: '*'; inherits: false; initial-value: cubic-bezier(0.22,0.61,0.36,1); }
+  .icons :is(path, circle) {
+    --ease-felora: cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  /* Stagger each icon ~200ms apart */
+  .ico:nth-child(1) :is(path, circle) { animation-delay: 0.0s, 0.0s; }
+  .ico:nth-child(2) :is(path, circle) { animation-delay: 0.2s, 0.2s; }
+  .ico:nth-child(3) :is(path, circle) { animation-delay: 0.4s, 0.4s; }
+  .ico:nth-child(4) :is(path, circle) { animation-delay: 0.6s, 0.6s; }
+  .ico:nth-child(5) :is(path, circle) { animation-delay: 0.8s, 0.8s; }
+  .ico:nth-child(6) :is(path, circle) { animation-delay: 1.0s, 1.0s; }
+  .ico:nth-child(7) :is(path, circle) { animation-delay: 1.2s, 1.2s; }
+
+  @keyframes draw {
+    0%   { stroke-dashoffset: var(--len, 120); }
+    40%  { stroke-dashoffset: 0; }
+    80%  { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: var(--len, 120); }
+  }
+  @keyframes breathe {
+    0%, 100% { opacity: 0.0; }
+    18%, 82% { opacity: 1; }
+  }
+
+  /* Gold playhead drifts beneath the icons in lockstep */
+  .playhead {
+    margin-top: 24px;
+    height: 1px;
+    background: var(--border);
+    position: relative;
+    max-width: 320px;
+  }
+  .playhead__dot {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 6px; height: 6px;
+    background: var(--felora-gold);
+    animation: drift 5.6s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+  }
+  @keyframes drift {
+    0%   { left: 0%; }
+    50%  { left: 100%; }
+    100% { left: 0%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .icons :is(path, circle) {
+      animation: none;
+      stroke-dashoffset: 0;
+    }
+    .icons { opacity: 1; }
+    .playhead__dot { animation: none; left: 0; }
+  }
+</style>
+</head><body>
+<div class="card" style="gap:14px;">
+  <label class="k">Iconography · Lucide hairline · 1.5px stroke</label>
+  <div class="icons">
+    <!-- arrow-right -->
+    <svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 12h14M13 6l6 6-6 6" style="--len: 38;"/>
+    </svg>
+    <!-- chevron-down -->
+    <svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 9l6 6 6-6" style="--len: 22;"/>
+    </svg>
+    <!-- clock -->
+    <svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9" style="--len: 60;"/>
+      <path d="M12 7v5l3 2" style="--len: 12;"/>
+    </svg>
+    <!-- bag -->
+    <svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" style="--len: 64;"/>
+      <path d="M3 6h18M16 10a4 4 0 0 1-8 0" style="--len: 36;"/>
+    </svg>
+    <!-- mail -->
+    <svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4h16c1 0 2 1 2 2v12c0 1-1 2-2 2H4c-1 0-2-1-2-2V6c0-1 1-2 2-2zM22 6l-10 7L2 6" style="--len: 90;"/>
+    </svg>
+    <!-- user -->
+    <svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" style="--len: 28;"/>
+      <circle cx="12" cy="7" r="4" style="--len: 26;"/>
+    </svg>
+    <!-- heart -->
+    <svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" style="--len: 56;"/>
+    </svg>
+  </div>
+
+  <div class="playhead">
+    <span class="playhead__dot"></span>
+  </div>
+
+  <p class="note">Lucide via CDN · hairline 1.5px · inherits text colour. Strokes draw themselves in over 5.6s, the FELŌRA easing curve. <strong style="color:var(--felora-noir); font-weight:500;">No emoji. No filled icons. No two-tone.</strong></p>
+</div>
+</body></html>

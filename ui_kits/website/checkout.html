@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Secure checkout · FELŌRA</title>
+  <link rel="stylesheet" href="../../colors_and_type.css" />
+  <link rel="stylesheet" href="site.css" />
+  <link rel="stylesheet" href="checkout.css" />
+</head>
+<body class="checkout-page">
+
+  <!-- Minimal secure-checkout header (no full nav, no bag, just the wordmark) -->
+  <header class="ck-nav scheme-ivory" data-screen-label="Checkout nav">
+    <div class="container ck-nav__inner">
+      <a class="ck-nav__logo" href="index.html" aria-label="FELŌRA back to shop">
+        <img src="../../assets/logo-light.svg" alt="FELŌRA" />
+      </a>
+      <div class="ck-nav__secure">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        <span class="caption">Secure checkout</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="ck-crumbs scheme-ivory" aria-label="Checkout steps">
+    <div class="container ck-crumbs__inner">
+      <span class="ck-crumb is-done"><span class="ck-crumb__num">01</span> Bag</span>
+      <span class="ck-crumbs__sep">›</span>
+      <span class="ck-crumb is-active"><span class="ck-crumb__num">02</span> Information</span>
+      <span class="ck-crumbs__sep">›</span>
+      <span class="ck-crumb"><span class="ck-crumb__num">03</span> Shipping</span>
+      <span class="ck-crumbs__sep">›</span>
+      <span class="ck-crumb"><span class="ck-crumb__num">04</span> Payment</span>
+    </div>
+  </nav>
+
+  <main class="ck-main scheme-ivory">
+    <div class="container ck-grid">
+
+      <!-- LEFT — forms -->
+      <section class="ck-form" aria-labelledby="ck-form-h">
+        <div class="ck-form__head">
+          <span class="eyebrow">Held, securely</span>
+          <hr class="rule-gold" />
+          <h1 id="ck-form-h" class="ck-form__title">Almost in her arms.<em> A few details.</em></h1>
+        </div>
+
+        <form class="ck-form__body" onsubmit="event.preventDefault(); document.getElementById('ck-thanks').hidden=false; this.querySelector('.ck-submit').textContent='Order placed. Welcome.'; setTimeout(()=>window.scrollTo({top:0,behavior:'smooth'}), 80);">
+
+          <!-- Contact -->
+          <fieldset class="ck-section">
+            <legend class="ck-section__head">
+              <span class="caption">01</span>
+              <h2>Contact</h2>
+              <a class="ck-section__link" href="#">She has an account? Sign in</a>
+            </legend>
+            <div class="ck-row">
+              <label class="ck-field ck-field--full">
+                <span class="caption">Email address</span>
+                <input class="input" type="email" placeholder="her@email.care" required />
+              </label>
+            </div>
+            <label class="ck-check">
+              <input type="checkbox" checked />
+              <span>Email me letters from FELŌRA — never more than one a month.</span>
+            </label>
+          </fieldset>
+
+          <!-- Shipping -->
+          <fieldset class="ck-section">
+            <legend class="ck-section__head">
+              <span class="caption">02</span>
+              <h2>Shipping address</h2>
+            </legend>
+            <div class="ck-row ck-row--2">
+              <label class="ck-field">
+                <span class="caption">First name</span>
+                <input class="input" type="text" required />
+              </label>
+              <label class="ck-field">
+                <span class="caption">Last name</span>
+                <input class="input" type="text" required />
+              </label>
+            </div>
+            <div class="ck-row">
+              <label class="ck-field ck-field--full">
+                <span class="caption">Address</span>
+                <input class="input" type="text" required />
+              </label>
+            </div>
+            <div class="ck-row">
+              <label class="ck-field ck-field--full">
+                <span class="caption">Apartment, suite, etc. (optional)</span>
+                <input class="input" type="text" />
+              </label>
+            </div>
+            <div class="ck-row ck-row--3">
+              <label class="ck-field">
+                <span class="caption">City</span>
+                <input class="input" type="text" required />
+              </label>
+              <label class="ck-field">
+                <span class="caption">Postal code</span>
+                <input class="input" type="text" required />
+              </label>
+              <label class="ck-field">
+                <span class="caption">Country</span>
+                <div class="select-wrap">
+                  <select>
+                    <option>United Kingdom</option>
+                    <option>United States</option>
+                    <option>Canada</option>
+                  </select>
+                </div>
+              </label>
+            </div>
+            <div class="ck-row">
+              <label class="ck-field ck-field--full">
+                <span class="caption">Phone (for delivery updates only)</span>
+                <input class="input" type="tel" />
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Shipping method -->
+          <fieldset class="ck-section">
+            <legend class="ck-section__head">
+              <span class="caption">03</span>
+              <h2>Shipping method</h2>
+            </legend>
+            <label class="ck-method">
+              <input type="radio" name="ship" checked />
+              <span class="ck-method__copy">
+                <span class="ck-method__name">Standard · 5 – 8 business days</span>
+                <span class="ck-method__sub">Tracked. Carbon-neutral.</span>
+              </span>
+              <span class="ck-method__price" data-price data-gbp="0" data-usd="0" data-cad="0">Free</span>
+            </label>
+            <label class="ck-method">
+              <input type="radio" name="ship" />
+              <span class="ck-method__copy">
+                <span class="ck-method__name">Express · 2 – 3 business days</span>
+                <span class="ck-method__sub">Priority delivery to the United States.</span>
+              </span>
+              <span class="ck-method__price" data-price data-gbp="7.99" data-usd="9.99" data-cad="14.99">£7.99</span>
+            </label>
+          </fieldset>
+
+          <!-- Payment -->
+          <fieldset class="ck-section">
+            <legend class="ck-section__head">
+              <span class="caption">04</span>
+              <h2>Payment</h2>
+              <span class="ck-section__lock">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+                All transactions encrypted &amp; secure
+              </span>
+            </legend>
+            <div class="ck-row">
+              <label class="ck-field ck-field--full">
+                <span class="caption">Card number</span>
+                <input class="input" type="text" placeholder="1234 5678 9012 3456" />
+              </label>
+            </div>
+            <div class="ck-row ck-row--3">
+              <label class="ck-field ck-field--full" style="grid-column: 1 / 3;">
+                <span class="caption">Name on card</span>
+                <input class="input" type="text" />
+              </label>
+              <label class="ck-field">
+                <span class="caption">Expiry · CVC</span>
+                <input class="input" type="text" placeholder="MM / YY · 123" />
+              </label>
+            </div>
+            <p class="ck-pay-alt caption">Or pay with <a href="#">Apple Pay</a> · <a href="#">Google Pay</a> · <a href="#">Shop Pay</a></p>
+          </fieldset>
+
+          <button class="btn btn--gold ck-submit" type="submit">Complete order</button>
+          <p class="ck-fineprint caption">By placing your order you agree to our <a class="link-gold" href="policies.html#terms">terms</a> and <a class="link-gold" href="policies.html#privacy">privacy policy</a>.</p>
+
+          <div id="ck-thanks" class="ck-thanks" hidden>
+            <span class="eyebrow">Held</span>
+            <hr class="rule-gold" />
+            <p>Order placed. A letter is on its way to her email. Tracking will follow when the parcel leaves us — usually within 1–3 working days.</p>
+          </div>
+        </form>
+      </section>
+
+      <!-- RIGHT — summary -->
+      <aside class="ck-summary" aria-label="Order summary">
+        <div class="ck-summary__inner">
+          <header class="ck-summary__head">
+            <span class="eyebrow">Her bag</span>
+            <hr class="rule-gold" />
+          </header>
+
+          <ul class="ck-items">
+            <li class="ck-item">
+              <div class="ck-item__img">
+                <img src="../../assets/images/np-01-kit.jpg" alt="The Nurture Pro™" />
+                <span class="ck-item__qty">1</span>
+              </div>
+              <div class="ck-item__copy">
+                <h3>The Nurture Pro<sup>™</sup></h3>
+                <p class="caption">Double wearable electric breast pump</p>
+                <p class="caption ck-item__variant">25mm flange · 19mm and 22mm inserts</p>
+              </div>
+              <span class="ck-item__price" data-price data-gbp="230" data-usd="289" data-cad="394">£230</span>
+            </li>
+          </ul>
+
+          <div class="ck-discount">
+            <label class="ck-field ck-field--full">
+              <span class="caption">Discount code</span>
+              <div class="ck-discount__row">
+                <input class="input" type="text" placeholder="" />
+                <button type="button" class="btn btn--ghost btn--sm">Apply</button>
+              </div>
+            </label>
+          </div>
+
+          <dl class="ck-totals">
+            <div class="ck-total-row">
+              <dt>Subtotal</dt>
+              <dd data-price data-gbp="230" data-usd="289" data-cad="394">£230</dd>
+            </div>
+            <div class="ck-total-row">
+              <dt>Shipping</dt>
+              <dd class="ck-total-row__free">Free</dd>
+            </div>
+            <div class="ck-total-row">
+              <dt>Tax</dt>
+              <dd class="caption">calculated at checkout</dd>
+            </div>
+            <div class="ck-total-row ck-total-row--final">
+              <dt>Total</dt>
+              <dd>
+                <span class="ck-total-row__cur" data-price-cur>GBP</span>
+                <span data-price data-gbp="230" data-usd="289" data-cad="394">£230</span>
+              </dd>
+            </div>
+          </dl>
+
+          <p class="ck-fineprint caption" style="margin-top: 24px;">Free UK shipping · 30-day guarantee · 1,247 mamas and counting.</p>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer class="ck-footer scheme-onyx">
+    <div class="container ck-footer__inner">
+      <p class="caption">© 2026 FELŌRA · For she who carries life</p>
+      <ul class="footer__legal">
+        <li><a href="policies.html#privacy">Privacy</a></li>
+        <li><a href="policies.html#terms">Terms</a></li>
+        <li><a href="policies.html#cookies">Cookies</a></li>
+        <li><a href="policies.html#shipping">Shipping</a></li>
+        <li><a href="policies.html#returns">Returns</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="country-select.js"></script>
+  <script>
+    // Surface the current currency code in the total row
+    function syncCurLabel() {
+      try {
+        const region = localStorage.getItem('felora.region') || 'UK';
+        const map = { UK: 'GBP', US: 'USD', CA: 'CAD' };
+        document.querySelectorAll('[data-price-cur]').forEach(el => el.textContent = map[region] || 'GBP');
+      } catch (e) {}
+    }
+    syncCurLabel();
+    // Re-sync after any user click on the country selector
+    document.addEventListener('click', e => {
+      if (e.target.closest('.country-select__option')) setTimeout(syncCurLabel, 50);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>FELŌRA — Brand Proposal 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+@media print{
+  .no-print{display:none!important;}
+  body{background:#fff;}
+  .page{page-break-after:always;min-height:auto;}
+}
+body{font-family:'Jost',sans-serif;background:#F7F3EE;color:#2C2C2A;-webkit-font-smoothing:antialiased;}
+
+/* ── COVER ── */
+.cover{
+  background:#2C2C2A;
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+  padding:80px 96px;
+  position:relative;overflow:hidden;
+}
+.cover::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(196,168,130,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(196,168,130,.03) 1px,transparent 1px);
+  background-size:60px 60px;pointer-events:none;
+}
+.cover::after{
+  content:'';position:absolute;top:-120px;left:-100px;
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(196,168,130,.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cover__top{position:relative;z-index:2;}
+.cover__eyebrow{
+  font-size:9px;letter-spacing:.28em;text-transform:uppercase;
+  color:rgba(196,168,130,.6);margin-bottom:80px;
+}
+.cover__brand{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(5rem,12vw,9rem);font-weight:300;
+  color:#F7F3EE;letter-spacing:.18em;line-height:1;
+  margin-bottom:20px;
+}
+.cover__tagline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.4rem;font-style:italic;
+  color:#C4A882;letter-spacing:.06em;
+}
+.cover__rule{width:80px;height:1px;background:#C4A882;margin:32px 0;}
+.cover__subtitle{
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(196,168,130,.5);max-width:480px;line-height:1.9;
+}
+.cover__bottom{
+  position:relative;z-index:2;
+  display:flex;justify-content:space-between;align-items:flex-end;
+}
+.cover__doc-info{font-size:10px;color:rgba(196,168,130,.38);letter-spacing:.1em;}
+.cover__doc-info div{margin-top:4px;}
+
+/* ── PAGES ── */
+.page{
+  max-width:900px;margin:0 auto;
+  padding:80px 96px;
+  border-bottom:1px solid rgba(139,111,94,.12);
+}
+.page:last-child{border-bottom:none;}
+
+/* Section heading */
+.sec-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:5rem;font-weight:300;font-style:italic;
+  color:rgba(139,111,94,.12);line-height:1;
+  margin-bottom:-24px;
+}
+.sec-ew{
+  font-size:9px;letter-spacing:.26em;text-transform:uppercase;
+  color:#8B6F5E;margin-bottom:14px;
+  display:flex;align-items:center;gap:12px;
+}
+.sec-ew::before{content:'';display:block;width:22px;height:1px;background:#C4A882;flex-shrink:0;}
+.sec-h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,4vw,3.4rem);font-weight:300;
+  color:#2C2C2A;line-height:1.1;margin-bottom:18px;
+}
+.sec-h2 em{font-style:italic;color:#8B6F5E;}
+.rule{width:44px;height:1px;background:#C4A882;margin-bottom:32px;}
+
+/* Body text */
+.body-p{
+  font-size:14px;line-height:2;color:#7A6055;font-weight:300;
+  margin-bottom:18px;max-width:680px;
+}
+.body-p b{color:#2C2C2A;font-weight:500;}
+.body-p em{font-style:italic;color:#8B6F5E;}
+
+/* Pull quote */
+.pull{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.6rem;font-style:italic;font-weight:300;
+  color:#2C2C2A;line-height:1.5;
+  border-left:3px solid #C4A882;
+  padding:16px 28px;margin:32px 0;
+  background:#EFE9E0;
+}
+
+/* Grid cards */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:32px 0;}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin:32px 0;}
+.card{background:#EFE9E0;padding:36px 32px;}
+.card--dark{background:#2C2C2A;}
+.card__num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3rem;font-weight:300;font-style:italic;
+  color:rgba(139,111,94,.2);line-height:1;margin-bottom:14px;
+}
+.card__title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.2rem;font-weight:400;color:#2C2C2A;
+  margin-bottom:10px;
+}
+.card--dark .card__title{color:#F7F3EE;}
+.card__body{font-size:12px;line-height:1.82;color:#7A6055;font-weight:300;}
+.card--dark .card__body{color:rgba(196,168,130,.6);}
+
+/* Color swatches */
+.swatches{display:flex;gap:2px;margin:24px 0;}
+.swatch{flex:1;}
+.swatch__color{height:80px;}
+.swatch__name{font-size:10px;letter-spacing:.08em;color:#7A6055;margin-top:8px;}
+.swatch__hex{font-family:'Courier New',monospace;font-size:10px;color:#C4A882;}
+
+/* Bullet list */
+.blist{list-style:none;display:grid;gap:12px;margin:24px 0;}
+.blist li{
+  display:flex;gap:14px;align-items:flex-start;
+  font-size:13px;line-height:1.75;color:#7A6055;font-weight:300;
+}
+.blist li::before{
+  content:'✦';color:#C4A882;font-size:10px;
+  flex-shrink:0;margin-top:3px;
+}
+.blist li b{color:#2C2C2A;font-weight:500;}
+
+/* Dark section */
+.dark-sec{
+  background:#2C2C2A;
+  padding:80px 96px;
+  max-width:100%;
+}
+.dark-sec .sec-ew{color:#C4A882;}
+.dark-sec .sec-ew::before{background:rgba(196,168,130,.4);}
+.dark-sec .sec-h2{color:#F7F3EE;}
+.dark-sec .sec-h2 em{color:#C4A882;}
+.dark-sec .body-p{color:rgba(196,168,130,.6);}
+.dark-sec .body-p b{color:#F7F3EE;}
+.dark-sec .rule{background:rgba(196,168,130,.35);}
+.dark-sec .pull{
+  background:rgba(247,243,238,.05);
+  border-left-color:#C4A882;color:#F7F3EE;
+}
+.dark-sec .blist li{color:rgba(196,168,130,.65);}
+.dark-sec .blist li b{color:#F7F3EE;}
+
+/* Timeline */
+.timeline{margin:32px 0;display:grid;gap:0;}
+.tl-item{display:flex;gap:24px;padding-bottom:32px;position:relative;}
+.tl-item::before{
+  content:'';position:absolute;left:11px;top:24px;
+  width:1px;height:100%;background:rgba(139,111,94,.2);
+}
+.tl-item:last-child::before{display:none;}
+.tl-dot{
+  width:24px;height:24px;border:1px solid #C4A882;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:2px;
+}
+.tl-dot-inner{width:6px;height:6px;background:#C4A882;}
+.tl-content{}
+.tl-phase{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#C4A882;margin-bottom:4px;}
+.tl-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:#2C2C2A;margin-bottom:6px;}
+.tl-body{font-size:12px;line-height:1.75;color:#7A6055;font-weight:300;}
+
+/* Page footer */
+.page-footer{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:40px;border-top:1px solid rgba(139,111,94,.12);
+  margin-top:60px;
+}
+.page-footer span{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(139,111,94,.45);}
+
+/* Table */
+table{width:100%;border-collapse:collapse;margin:24px 0;}
+th{
+  font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:#8B6F5E;padding:12px 16px;text-align:left;
+  border-bottom:1px solid rgba(139,111,94,.2);font-weight:400;
+}
+td{
+  font-size:13px;color:#7A6055;padding:14px 16px;font-weight:300;
+  border-bottom:1px solid rgba(139,111,94,.08);vertical-align:top;
+}
+td b{color:#2C2C2A;font-weight:500;}
+tr:last-child td{border-bottom:none;}
+
+@media(max-width:768px){
+  .cover{padding:48px 32px;}
+  .page{padding:52px 32px;}
+  .dark-sec{padding:52px 32px;}
+  .grid-2,.grid-3{grid-template-columns:1fr;}
+  .swatches{flex-wrap:wrap;}
+  .swatch{flex:0 0 45%;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+  COVER PAGE
+══════════════════════════════════════ -->
+<div class="cover page">
+  <div class="cover__top">
+    <div class="cover__eyebrow">Brand Identity Proposal · Confidential · 2026</div>
+    <div class="cover__brand">FELŌRA</div>
+    <div class="cover__tagline">For she who carries life.</div>
+    <div class="cover__rule"></div>
+    <div class="cover__subtitle">
+      A premium women's wellness brand built around the most extraordinary experience a human being can have. This document defines who we are, what we stand for, how we speak, and where we are going.
+    </div>
+  </div>
+  <div class="cover__bottom">
+    <div class="cover__doc-info">
+      <div>FELŌRA · felora.care</div>
+      <div>she@felora.care</div>
+      <div>@feloracare</div>
+    </div>
+    <div class="cover__doc-info" style="text-align:right;">
+      <div>Brand Proposal</div>
+      <div>Version 1.0 · May 2026</div>
+      <div>Confidential</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  01 · BRAND OVERVIEW
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="sec-num">01</div>
+  <div class="sec-ew">Brand overview</div>
+  <h2 class="sec-h2">What FELŌRA <em>is.</em></h2>
+  <div class="rule"></div>
+
+  <p class="body-p">FELŌRA is a premium direct-to-consumer women's wellness brand founded in 2026. We design, source and sell comfort and recovery products for women during pregnancy, postpartum and beyond — products that are doctor informed, pregnancy safe and built around how her body actually feels, not around a specification sheet.</p>
+
+  <p class="body-p">We are not a maternity product company. We are the brand every woman reaches for the moment she finds out she is carrying life — and we grow with her through every season of womanhood that follows.</p>
+
+  <div class="pull">"Most brands treat pregnancy as a condition to manage. FELŌRA treats it as something to honour."</div>
+
+  <p class="body-p">We launched with a single hero product — <b>The Carry Belt™</b> — a premium pregnancy support belt priced at £55, positioned against a clinical and generic market. FELŌRA's competitive advantage is not the product itself. It is the brand wrapped around it — the story, the voice, the aesthetic, and the emotional connection that no clinical competitor can replicate.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card__num">01</div>
+      <div class="card__title">Primary market</div>
+      <div class="card__body">United Kingdom — targeting women aged 25–40 who are pregnant or in early postpartum recovery and who aspire to premium wellness products.</div>
+    </div>
+    <div class="card">
+      <div class="card__num">02</div>
+      <div class="card__title">Secondary market</div>
+      <div class="card__body">Canada and the United States — entering after UK reviews and social proof are established. Long-term primary market.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>FELŌRA Brand Proposal 2026</span>
+    <span>01 · Brand Overview</span>
+    <span>Confidential</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  02 · MISSION, VISION & VALUES
+══════════════════════════════════════ -->
+<div class="dark-sec page">
+  <div class="sec-num" style="color:rgba(196,168,130,.08);">02</div>
+  <div class="sec-ew">Mission · Vision · Values</div>
+  <h2 class="sec-h2">Why we <em>exist.</em></h2>
+  <div class="rule"></div>
+
+  <p class="body-p"><b>Our mission:</b> To be the brand every woman reaches for the moment she finds out she is carrying life.</p>
+  <p class="body-p"><b>Our vision:</b> A world where every pregnant and postpartum woman has access to wellness products that honour the extraordinary nature of her journey — not just manage its symptoms.</p>
+
+  <div class="pull">"We will never make a product that is not worthy of this moment. We will never use a word that does not honour her journey. We will never treat pregnancy as something to manage — when it is something to celebrate."</div>
+
+  <p class="body-p"><b>Our core values — the five things FELŌRA will never compromise on:</b></p>
+
+  <ul class="blist">
+    <li><b>Honesty.</b> We only promise what we can deliver. We never use inflated claims, fake reviews or misleading copy. Our brand is built on truth.</li>
+    <li><b>Intentionality.</b> Every product decision, every word, every design choice begins with one question — does this make her feel held?</li>
+    <li><b>Premium without pretension.</b> FELŌRA is aspirational but never exclusionary. She deserves luxury — regardless of her background.</li>
+    <li><b>She first.</b> Every metric, every decision, every campaign is measured against one standard — is this good for her?</li>
+    <li><b>Continuous growth.</b> FELŌRA is a brand in motion. We listen to our customers, improve our products and evolve our story — always forward.</li>
+  </ul>
+
+  <div class="page-footer" style="border-color:rgba(196,168,130,.12);">
+    <span style="color:rgba(196,168,130,.3);">FELŌRA Brand Proposal 2026</span>
+    <span style="color:rgba(196,168,130,.3);">02 · Mission & Values</span>
+    <span style="color:rgba(196,168,130,.3);">Confidential</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  03 · BRAND IDENTITY
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="sec-num">03</div>
+  <div class="sec-ew">Brand identity</div>
+  <h2 class="sec-h2">How FELŌRA <em>looks.</em></h2>
+  <div class="rule"></div>
+
+  <p class="body-p">FELŌRA's visual identity is built around three principles: <b>restraint, warmth and precision.</b> Nothing is accidental. Nothing is generic. Every visual element is chosen to make her feel that she has arrived somewhere that was made entirely for her.</p>
+
+  <p class="body-p" style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8B6F5E;margin-bottom:8px;">Brand colours</p>
+
+  <div class="swatches">
+    <div class="swatch">
+      <div class="swatch__color" style="background:#2C2C2A;"></div>
+      <div class="swatch__name">Noir</div>
+      <div class="swatch__hex">#2C2C2A</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__color" style="background:#8B6F5E;"></div>
+      <div class="swatch__name">Terra</div>
+      <div class="swatch__hex">#8B6F5E</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__color" style="background:#C4A882;"></div>
+      <div class="swatch__name">Sand</div>
+      <div class="swatch__hex">#C4A882</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__color" style="background:#E8D5C4;border:1px solid rgba(139,111,94,.15);"></div>
+      <div class="swatch__name">Blush</div>
+      <div class="swatch__hex">#E8D5C4</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__color" style="background:#EFE9E0;border:1px solid rgba(139,111,94,.15);"></div>
+      <div class="swatch__name">Cream</div>
+      <div class="swatch__hex">#EFE9E0</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__color" style="background:#F7F3EE;border:1px solid rgba(139,111,94,.15);"></div>
+      <div class="swatch__name">Ivory</div>
+      <div class="swatch__hex">#F7F3EE</div>
+    </div>
+  </div>
+
+  <p class="body-p" style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8B6F5E;margin:28px 0 8px;">Typography</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card__title" style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;margin-bottom:8px;">Cormorant Garamond</div>
+      <div class="card__body">Headlines · brand name · pull quotes · prices · all emotional statements. Weights 300 and 400 only. Italic for gold accent phrases.</div>
+    </div>
+    <div class="card">
+      <div class="card__title" style="font-family:'Jost',sans-serif;font-size:1.4rem;font-weight:300;letter-spacing:.06em;margin-bottom:8px;">Jost</div>
+      <div class="card__body">Body text · labels · navigation · buttons · all functional copy. Weights 300 and 400. Uppercase with letter-spacing for labels and eyebrows.</div>
+    </div>
+  </div>
+
+  <p class="body-p"><b>Design rules — non-negotiable:</b></p>
+  <ul class="blist">
+    <li><b>No border radius anywhere.</b> Sharp edges only. Rounded corners are generic. Sharpness signals confidence.</li>
+    <li><b>No emojis in any brand communication.</b> Ever.</li>
+    <li><b>No .99 pricing.</b> £55 not £54.99. Premium brands do not play pricing tricks.</li>
+    <li><b>Gold is used sparingly.</b> It is an accent, not a background. Its power comes from restraint.</li>
+    <li><b>Whitespace is content.</b> FELŌRA never crowds. Every section breathes.</li>
+  </ul>
+
+  <div class="page-footer">
+    <span>FELŌRA Brand Proposal 2026</span>
+    <span>03 · Brand Identity</span>
+    <span>Confidential</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  04 · BRAND VOICE & TONE
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="sec-num">04</div>
+  <div class="sec-ew">Brand voice & tone</div>
+  <h2 class="sec-h2">How FELŌRA <em>speaks.</em></h2>
+  <div class="rule"></div>
+
+  <p class="body-p">FELŌRA speaks like a trusted friend who understands her body better than any clinical product ever has. We are warm without being saccharine. Premium without being cold. Direct without being aggressive. Emotional without being manipulative.</p>
+
+  <p class="body-p">We speak <b>to her</b> — not about her, not about our products, not about features. Every sentence asks: does this make her feel seen?</p>
+
+  <div class="grid-2" style="margin:32px 0;">
+    <div class="card card--dark">
+      <div class="card__title">FELŌRA says</div>
+      <ul class="blist" style="margin-top:12px;">
+        <li>You deserve to feel held.</li>
+        <li>The 2am moment. Finally answered.</li>
+        <li>She should not have to choose.</li>
+        <li>Your body is doing something extraordinary.</li>
+        <li>We built this for exactly this moment.</li>
+      </ul>
+    </div>
+    <div class="card" style="background:#EFE9E0;">
+      <div class="card__title">FELŌRA never says</div>
+      <ul class="blist" style="margin-top:12px;">
+        <li>Reduces pain by 70%</li>
+        <li>Don't compromise on comfort</li>
+        <li>Add to bag 🛍️</li>
+        <li>Limited time offer!</li>
+        <li>Designed by mamas for mamas</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="body-p"><b>The four tones of FELŌRA voice:</b></p>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card__num">i</div>
+      <div class="card__title">Empathetic</div>
+      <div class="card__body">We acknowledge her reality — the pain, the exhaustion, the invisible weight — before we offer anything. She feels seen before she sees the product.</div>
+    </div>
+    <div class="card">
+      <div class="card__num">ii</div>
+      <div class="card__title">Poetic</div>
+      <div class="card__body">FELŌRA uses language with intention. "The 2am moment" says more than "nighttime back pain." Choose the image over the explanation. Always.</div>
+    </div>
+    <div class="card">
+      <div class="card__num">iii</div>
+      <div class="card__title">Confident</div>
+      <div class="card__body">We never hedge. "This might help" becomes "This was built for exactly this." Confidence is not arrogance — it is knowing what we made and who we made it for.</div>
+    </div>
+    <div class="card">
+      <div class="card__num">iv</div>
+      <div class="card__title">Intimate</div>
+      <div class="card__body">We write as if we are writing to one person. Not "mamas everywhere" — to her specifically. Singular. Personal. Present tense.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>FELŌRA Brand Proposal 2026</span>
+    <span>04 · Brand Voice</span>
+    <span>Confidential</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  05 · THE PRODUCT
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="sec-num">05</div>
+  <div class="sec-ew">The product</div>
+  <h2 class="sec-h2">The Carry <em>Belt™</em></h2>
+  <div class="rule"></div>
+
+  <p class="body-p">Our launch product. Named for the brand's soul — she carries life, and this product carries her. The name connects directly to our tagline and our identity. It is ownable, memorable and unlike anything else in the maternity market.</p>
+
+  <div class="pull">"She should not have to choose between feeling supported and feeling beautiful."</div>
+
+  <table>
+    <tr><th>Detail</th><th>Specification</th></tr>
+    <tr><td><b>Product name</b></td><td>The Carry Belt™ by FELŌRA</td></tr>
+    <tr><td><b>Category</b></td><td>Premium Pregnancy Support · Doctor Informed Design</td></tr>
+    <tr><td><b>Price (UK)</b></td><td>£55.00</td></tr>
+    <tr><td><b>Compare at</b></td><td>£75.00</td></tr>
+    <tr><td><b>Material</b></td><td>Breathable stretch elastic · hypoallergenic · skin safe</td></tr>
+    <tr><td><b>Closure</b></td><td>Adjustable velcro fastening</td></tr>
+    <tr><td><b>Colours</b></td><td>Black · Grey · Pink · Nude · White</td></tr>
+    <tr><td><b>Sizes</b></td><td>S (70–80cm) · M (80–90cm) · L (90–105cm) · XL (105–120cm) · 2XL (120–140cm)</td></tr>
+    <tr><td><b>Use</b></td><td>Second trimester through postpartum recovery · worn under or over clothing</td></tr>
+    <tr><td><b>Fulfilment</b></td><td>Dropshipping · 5–8 business day UK delivery</td></tr>
+    <tr><td><b>Guarantee</b></td><td>30-day satisfaction guarantee</td></tr>
+  </table>
+
+  <p class="body-p">The Carry Belt™ is FELŌRA's entry product — not our only product. The brand is designed to expand into a full maternity and women's wellness catalogue including recovery products, nursing essentials, comfort bundles and postpartum care. The belt establishes the brand's credibility, voice and customer base.</p>
+
+  <div class="page-footer">
+    <span>FELŌRA Brand Proposal 2026</span>
+    <span>05 · The Product</span>
+    <span>Confidential</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  06 · TARGET CUSTOMER
+══════════════════════════════════════ -->
+<div class="dark-sec page">
+  <div class="sec-num" style="color:rgba(196,168,130,.07);">06</div>
+  <div class="sec-ew">Target customer</div>
+  <h2 class="sec-h2">She who <em>carries life.</em></h2>
+  <div class="rule"></div>
+
+  <p class="body-p">Her name is not a demographic. She is not a data point. She is the woman at 2am who cannot sleep because her back aches and nothing has truly helped. She is the professional who wears a support belt under her work clothes because she refuses to stop living her life. She is the first-time mama who wants everything around this extraordinary experience to feel as sacred as the experience itself.</p>
+
+  <div class="grid-2" style="margin:32px 0;">
+    <div class="card card--dark" style="background:rgba(247,243,238,.05);border:1px solid rgba(196,168,130,.12);">
+      <div class="card__title">Primary customer</div>
+      <ul class="blist" style="margin-top:12px;">
+        <li><b>Age:</b> 25–38</li>
+        <li><b>Location:</b> UK · Canada · US</li>
+        <li><b>Stage:</b> Second or third trimester · early postpartum</li>
+        <li><b>Income:</b> Middle to upper-middle · values quality over price</li>
+        <li><b>Mindset:</b> She expects premium. She has researched. She trusts brands that speak to her authentically.</li>
+        <li><b>Finds us:</b> Instagram · TikTok · word of mouth · Google search</li>
+      </ul>
+    </div>
+    <div class="card card--dark" style="background:rgba(247,243,238,.05);border:1px solid rgba(196,168,130,.12);">
+      <div class="card__title">Secondary customer</div>
+      <ul class="blist" style="margin-top:12px;">
+        <li><b>The gift buyer</b> — her friend, sister, partner or mother buying for a baby shower or pregnancy milestone</li>
+        <li><b>The postpartum buyer</b> — she used the belt during pregnancy and returns for recovery products</li>
+        <li><b>The brand evangelist</b> — she loved FELŌRA so much she tells every pregnant woman she meets</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="body-p">FELŌRA's customer does not just buy a product. She joins a brand whose entire existence is dedicated to making her feel honoured during the most extraordinary season of her life. That emotional connection is what drives repeat purchase, word-of-mouth and the reviews that build the brand's future.</p>
+
+  <div class="page-footer" style="border-color:rgba(196,168,130,.12);">
+    <span style="color:rgba(196,168,130,.3);">FELŌRA Brand Proposal 2026</span>
+    <span style="color:rgba(196,168,130,.3);">06 · Target Customer</span>
+    <span style="color:rgba(196,168,130,.3);">Confidential</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  07 · DIGITAL PRESENCE
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="sec-num">07</div>
+  <div class="sec-ew">Digital presence</div>
+  <h2 class="sec-h2">Where FELŌRA <em>lives.</em></h2>
+  <div class="rule"></div>
+
+  <table>
+    <tr><th>Platform</th><th>Handle</th><th>Strategy</th></tr>
+    <tr><td><b>Website</b></td><td>felora.care</td><td>Primary conversion platform. Built on Shopify with Canyon theme. Premium branded experience.</td></tr>
+    <tr><td><b>Instagram</b></td><td>@feloracare</td><td>Premium editorial content · product lifestyle · customer stories · Meta paid ads targeting UK women 25–40</td></tr>
+    <tr><td><b>TikTok</b></td><td>@feloracare</td><td>Organic content only (Nigeria restriction) · emotional storytelling · 2am moments · brand narrative</td></tr>
+    <tr><td><b>Facebook</b></td><td>Felora</td><td>Page linked to Instagram ads · community · Meta Advantage+ campaigns</td></tr>
+    <tr><td><b>Pinterest</b></td><td>@feloracare</td><td>Premium lifestyle imagery · wellness boards · evergreen discovery traffic</td></tr>
+  </table>
+
+  <p class="body-p" style="margin-top:24px;"><b>Email suite:</b></p>
+  <ul class="blist">
+    <li><b>she@felora.care</b> — primary customer contact · on all packaging and website</li>
+    <li><b>carry@felora.care</b> — orders and shipping · Shopify sender email</li>
+    <li><b>story@felora.care</b> — press · influencers · partnerships</li>
+  </ul>
+
+  <p class="body-p"><b>Content strategy — three pillars:</b></p>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card__num">i</div>
+      <div class="card__title">Her story</div>
+      <div class="card__body">Content about her experience — the 2am back ache, the heaviness, the invisible weight. Not about the product. About her truth.</div>
+    </div>
+    <div class="card">
+      <div class="card__num">ii</div>
+      <div class="card__title">The brand</div>
+      <div class="card__body">Behind the brand. The founder's story. Why FELŌRA was built. Premium aesthetic content — product shots, packaging, details.</div>
+    </div>
+    <div class="card">
+      <div class="card__num">iii</div>
+      <div class="card__title">Social proof</div>
+      <div class="card__body">Real customer reviews, testimonials, unboxing moments. User generated content that builds the community and trust.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>FELŌRA Brand Proposal 2026</span>
+    <span>07 · Digital Presence</span>
+    <span>Confidential</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  08 · GROWTH ROADMAP
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="sec-num">08</div>
+  <div class="sec-ew">Growth roadmap</div>
+  <h2 class="sec-h2">Where FELŌRA is <em>going.</em></h2>
+  <div class="rule"></div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+      <div class="tl-content">
+        <div class="tl-phase">Phase 1 · Now — Month 3</div>
+        <div class="tl-title">Launch & Proof</div>
+        <div class="tl-body">Launch The Carry Belt™ in the UK. Build first 20–50 reviews. Establish organic social presence on TikTok and Instagram. Collect first customer data. Revenue goal: £2,000–5,000.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+      <div class="tl-content">
+        <div class="tl-phase">Phase 2 · Month 3–6</div>
+        <div class="tl-title">Legal & Scale</div>
+        <div class="tl-body">Register FELŌRA LTD via 1st Formations. Open Wise Business. Connect Stripe. Launch Meta Advantage+ paid ads targeting UK pregnant women. Expand to Canada. Revenue goal: £10,000–25,000.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+      <div class="tl-content">
+        <div class="tl-phase">Phase 3 · Month 6–12</div>
+        <div class="tl-title">USA Entry & Product Expansion</div>
+        <div class="tl-body">Enter the US market with paid ads and influencer partnerships. Launch second product — postpartum recovery belt or pregnancy pillow. Begin building FELŌRA as a multi-product wellness brand. Revenue goal: £50,000+.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+      <div class="tl-content">
+        <div class="tl-phase">Phase 4 · Year 2+</div>
+        <div class="tl-title">Category Leadership</div>
+        <div class="tl-body">FELŌRA becomes the premium maternity wellness brand of record in the UK and Canada. Full product catalogue — 6+ products. Press coverage. Influencer brand partnerships. Wholesale retail conversations. Revenue goal: £500,000+.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>FELŌRA Brand Proposal 2026</span>
+    <span>08 · Growth Roadmap</span>
+    <span>Confidential</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+  09 · CLOSING
+══════════════════════════════════════ -->
+<div class="dark-sec page">
+  <div class="sec-num" style="color:rgba(196,168,130,.07);">09</div>
+  <div class="sec-ew">A closing thought</div>
+  <h2 class="sec-h2">You are doing something <em>sacred.</em></h2>
+  <div class="rule"></div>
+
+  <p class="body-p">FELŌRA was not built in a boardroom. It was built by an 18-year-old founder in Nigeria who looked at a billion dollar industry and saw one thing missing — a brand that truly honoured the woman at the centre of it all.</p>
+
+  <p class="body-p">No enormous budget. No passport. No UK company — yet. Just vision, voice and the refusal to build something ordinary when she could build something extraordinary.</p>
+
+  <div class="pull">"The brands that last are not the ones with the most money. They are the ones with the most truth."</div>
+
+  <p class="body-p">FELŌRA is true. Every word on the website was written for her. Every product was chosen for her. Every email, every policy, every footer line — written to make her feel that this brand exists entirely because she deserves it.</p>
+
+  <p class="body-p">That is not a marketing strategy. That is a foundation. And foundations do not break.</p>
+
+  <p class="body-p" style="margin-top:40px;color:rgba(196,168,130,.5);">— The FELŌRA founding team</p>
+  <p class="body-p" style="color:rgba(196,168,130,.4);font-size:12px;">felora.care · she@felora.care · @feloracare</p>
+
+  <div class="page-footer" style="border-color:rgba(196,168,130,.12);">
+    <span style="color:rgba(196,168,130,.3);">FELŌRA Brand Proposal 2026</span>
+    <span style="color:rgba(196,168,130,.3);">09 · Closing</span>
+    <span style="color:rgba(196,168,130,.3);">Confidential · felora.care</span>
+  </div>
+</div>
+
+</body>
+</html>

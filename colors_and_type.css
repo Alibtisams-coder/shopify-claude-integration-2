@@ -1,0 +1,403 @@
+/* ============================================================
+   FELŌRA — Design Tokens
+   Premium women's lifestyle brand. Light theme, sharp edges,
+   serif headings, restrained gold accent.
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap");
+
+:root {
+  /* ---------- COLOUR PALETTE ----------
+     Brand-defined palette. Override of Relume's purple-accent
+     export. These are the ONLY colours in FELŌRA. */
+
+  --felora-noir:   #2C2C2A;   /* primary dark bg */
+  --felora-onyx:   #1A1410;   /* deepest, footer + marquee */
+  --felora-mink:   #7A6055;   /* secondary text on light */
+  --felora-terra:  #8B6F5E;   /* mid tone, eyebrows, terra body */
+  --felora-gold:   #C4A882;   /* sand / gold accent — RESTRAINT */
+  --felora-gold-deep: #A88860;/* hover state for gold elements */
+  --felora-blush:  #E8D5C4;   /* warm blush, final CTA bg */
+  --felora-cream:  #EFE9E0;   /* secondary light bg */
+  --felora-ivory:  #F7F3EE;   /* primary light bg */
+  --felora-bone:   #FAF7F2;   /* ultralight, cards on cream */
+
+  /* Semantic surface tokens — prefer these in components */
+  --bg:            var(--felora-ivory);
+  --bg-soft:       var(--felora-cream);
+  --bg-warm:       var(--felora-blush);
+  --bg-dark:       var(--felora-noir);
+  --bg-darker:     var(--felora-onyx);
+
+  --fg:            var(--felora-noir);     /* primary text on light */
+  --fg-soft:       var(--felora-mink);     /* body copy */
+  --fg-muted:      var(--felora-terra);    /* eyebrows, captions, italics on dark */
+  --fg-inverse:    var(--felora-ivory);    /* text on dark bg */
+  --fg-inverse-soft: #C9C1B4;              /* body on dark */
+
+  --accent:        var(--felora-gold);
+  --accent-deep:   var(--felora-gold-deep);
+
+  --border:        rgba(44, 44, 42, 0.12);
+  --border-strong: rgba(44, 44, 42, 0.24);
+  --border-inverse: rgba(247, 243, 238, 0.18);
+
+  /* ---------- TYPOGRAPHY ----------
+     Headings: Cormorant Garamond (300 / 400, italic for emotional climax)
+     Body + labels: Jost (300 / 400)
+     Inter is BANNED. */
+
+  --font-serif: "Cormorant Garamond", "Times New Roman", Times, serif;
+  --font-sans:  "Jost", "Helvetica Neue", Arial, sans-serif;
+
+  /* Size scale — heading sizes use clamp for fluid scaling */
+  --text-display:  clamp(3rem,    6vw, 5.5rem);   /* hero */
+  --text-h1:       clamp(2.5rem,  5vw, 4.5rem);
+  --text-h2:       clamp(2rem,    4vw, 3.5rem);
+  --text-h3:       clamp(1.5rem,  2.5vw, 2.25rem);
+  --text-h4:       clamp(1.25rem, 2vw,  1.625rem);
+  --text-h5:       1.25rem;
+  --text-large:    1.125rem;
+  --text-body:     1rem;
+  --text-small:    0.875rem;
+  --text-eyebrow:  0.5625rem;   /* 9px */
+  --text-tiny:     0.6875rem;
+
+  /* Line heights */
+  --lh-tight:   1.05;
+  --lh-snug:    1.2;
+  --lh-body:    1.7;
+  --lh-loose:   2;
+
+  /* Letter spacing */
+  --ls-eyebrow:  0.26em;
+  --ls-button:   0.18em;
+  --ls-label:    0.12em;
+  --ls-display:  -0.01em;
+
+  /* ---------- SPACING ----------
+     8px base. FELŌRA breathes — generous section padding. */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+  --space-11: 160px;
+
+  --section-y-mobile:  64px;
+  --section-y:         96px;
+  --section-y-lg:      128px;
+
+  --container-max: 1280px;
+  --gutter:        5%;
+
+  /* ---------- RADII ----------
+     ZERO. Sharp edges only. Rounded corners make FELŌRA generic. */
+  --radius: 0;
+
+  /* ---------- ELEVATION ----------
+     Almost none. FELŌRA is flat, editorial.
+     Reserve faint shadow for floating cards on photo backgrounds only. */
+  --shadow-none: none;
+  --shadow-card: 0 1px 0 rgba(44, 44, 42, 0.06), 0 24px 48px -32px rgba(44, 44, 42, 0.18);
+
+  /* ---------- MOTION ----------
+     Slow, intentional. No bounce. */
+  --ease:      cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in:   cubic-bezier(0.55, 0, 0.45, 1);
+  --dur-fast:  180ms;
+  --dur:       320ms;
+  --dur-slow:  560ms;
+
+  /* ---------- COMPONENT TOKENS ---------- */
+  --rule-gold-w: 44px;
+  --rule-gold-h: 1px;
+
+  --btn-pad-y:   16px;
+  --btn-pad-x:   32px;
+  --btn-text:    var(--text-small);
+}
+
+/* ============================================================
+   SEMANTIC TYPE STYLES — use these classes / element selectors
+   ============================================================ */
+
+html {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 16px;
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: var(--lh-body);
+  color: var(--fg-soft);
+}
+
+h1, h2, h3, h4, h5, h6, .h-display {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+  color: var(--fg);
+  text-wrap: balance;
+  margin: 0;
+}
+
+h1, .h1 { font-size: var(--text-h1); }
+h2, .h2 { font-size: var(--text-h2); }
+h3, .h3 { font-size: var(--text-h3); line-height: var(--lh-snug); }
+h4, .h4 { font-size: var(--text-h4); line-height: var(--lh-snug); }
+h5, .h5 { font-size: var(--text-h5); line-height: var(--lh-snug); font-weight: 400; }
+
+.h-display { font-size: var(--text-display); }
+
+/* Italic gold phrase — emotional climax of a headline.
+   Use inline within a heading: <h2>For she who <em>carries life</em></h2> */
+h1 em, h2 em, h3 em, h4 em, .h-display em, .italic-gold {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--felora-terra);
+}
+.scheme-noir h1 em, .scheme-noir h2 em, .scheme-noir h3 em,
+.scheme-noir h4 em, .scheme-noir .h-display em, .scheme-noir .italic-gold,
+.scheme-onyx h1 em, .scheme-onyx h2 em, .scheme-onyx h3 em,
+.scheme-onyx h4 em, .scheme-onyx .h-display em, .scheme-onyx .italic-gold,
+.scheme-dark h1 em, .scheme-dark h2 em, .scheme-dark h3 em,
+.scheme-dark h4 em, .scheme-dark .h-display em, .scheme-dark .italic-gold {
+  color: var(--felora-gold);
+}
+
+/* Eyebrow label — sits above headlines, paired with .rule-gold. */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--text-eyebrow);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-eyebrow);
+  color: var(--felora-terra);
+  line-height: 1;
+  display: inline-block;
+}
+.scheme-noir .eyebrow,
+.scheme-onyx .eyebrow,
+.scheme-dark .eyebrow { color: var(--felora-gold); }
+
+/* Gold rule — 44 × 1px line between eyebrow and headline */
+.rule-gold {
+  display: block;
+  width: var(--rule-gold-w);
+  height: var(--rule-gold-h);
+  background: var(--felora-gold);
+  border: 0;
+  margin: 24px 0;
+}
+
+/* Body */
+p, .body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: 300;
+  line-height: var(--lh-loose);
+  color: var(--fg-soft);
+  text-wrap: pretty;
+  margin: 0;
+}
+.body-sm { font-size: var(--text-small); line-height: 1.75; }
+.body-lg { font-size: var(--text-large); line-height: 1.8; }
+
+/* Caption / small label (non-eyebrow) */
+.caption {
+  font-family: var(--font-sans);
+  font-size: var(--text-tiny);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-label);
+  color: var(--felora-terra);
+  font-weight: 400;
+}
+
+/* ============================================================
+   COLOUR SCHEMES — apply as class on <section> or wrapper
+   Mirrors Relume's scheme contract but with FELŌRA palette.
+   ============================================================ */
+
+.scheme-noir,           /* Scheme 1 — Hero, Mission, Expert badge */
+.scheme-onyx,           /* Scheme 2 — Footer, marquee strip */
+.scheme-affair {        /* legacy alias */
+  background: var(--bg-dark);
+  color: var(--fg-inverse);
+}
+.scheme-onyx { background: var(--bg-darker); }
+
+.scheme-ivory {         /* Scheme 3 — most content */
+  background: var(--bg);
+  color: var(--fg);
+}
+.scheme-cream {         /* Scheme 4 — Benefits, How It Works */
+  background: var(--bg-soft);
+  color: var(--fg);
+}
+.scheme-blush {         /* Scheme 5 — Final CTA */
+  background: var(--bg-warm);
+  color: var(--fg);
+}
+
+/* Generic "dark" hook for inverse styling logic */
+.scheme-noir, .scheme-onyx { color-scheme: dark; }
+.scheme-noir, .scheme-onyx { /* shorthand selector */ }
+.scheme-dark { background: var(--bg-dark); color: var(--fg-inverse); }
+.scheme-noir, .scheme-onyx { /* dark schemes also match .scheme-dark utility hooks via JS or duplicate classes */ }
+
+/* Dark-scheme overrides for body/secondary text */
+.scheme-noir p, .scheme-onyx p, .scheme-dark p,
+.scheme-noir .body, .scheme-onyx .body, .scheme-dark .body {
+  color: var(--fg-inverse-soft);
+}
+.scheme-noir h1, .scheme-noir h2, .scheme-noir h3, .scheme-noir h4, .scheme-noir h5,
+.scheme-onyx h1, .scheme-onyx h2, .scheme-onyx h3, .scheme-onyx h4, .scheme-onyx h5,
+.scheme-dark h1, .scheme-dark h2, .scheme-dark h3, .scheme-dark h4, .scheme-dark h5 {
+  color: var(--fg-inverse);
+}
+.scheme-noir hr.rule-gold, .scheme-onyx hr.rule-gold,
+.scheme-noir .rule-gold, .scheme-onyx .rule-gold,
+.scheme-dark .rule-gold {
+  background: var(--felora-gold);
+}
+
+/* Re-assert light-scheme text colours so a nested light card inside a dark
+   section (e.g. the contact card sitting inside .scheme-noir) wins the cascade.
+   Without this, the dark-scheme child selectors above would leak into the
+   nested .scheme-ivory wrapper and make all text the same colour as its bg. */
+.scheme-ivory h1, .scheme-ivory h2, .scheme-ivory h3, .scheme-ivory h4, .scheme-ivory h5,
+.scheme-cream h1, .scheme-cream h2, .scheme-cream h3, .scheme-cream h4, .scheme-cream h5,
+.scheme-blush h1, .scheme-blush h2, .scheme-blush h3, .scheme-blush h4, .scheme-blush h5 {
+  color: var(--fg);
+}
+.scheme-ivory p, .scheme-cream p, .scheme-blush p,
+.scheme-ivory .body, .scheme-cream .body, .scheme-blush .body {
+  color: var(--fg-soft);
+}
+.scheme-ivory .eyebrow, .scheme-cream .eyebrow, .scheme-blush .eyebrow {
+  color: var(--felora-terra);
+}
+.scheme-ivory h1 em, .scheme-ivory h2 em, .scheme-ivory h3 em,
+.scheme-ivory h4 em, .scheme-ivory .h-display em, .scheme-ivory .italic-gold,
+.scheme-cream h1 em, .scheme-cream h2 em, .scheme-cream h3 em,
+.scheme-cream h4 em, .scheme-cream .h-display em, .scheme-cream .italic-gold,
+.scheme-blush h1 em, .scheme-blush h2 em, .scheme-blush h3 em,
+.scheme-blush h4 em, .scheme-blush .h-display em, .scheme-blush .italic-gold {
+  color: var(--felora-terra);
+}
+
+/* ============================================================
+   ELEMENT PRIMITIVES — use as base styles for buttons + inputs
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  padding: var(--btn-pad-y) var(--btn-pad-x);
+  border-radius: var(--radius);
+  border: 1px solid var(--felora-noir);
+  background: var(--felora-noir);
+  color: var(--felora-ivory);
+  font-family: var(--font-sans);
+  font-size: var(--btn-text);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-button);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  isolation: isolate;
+}
+
+/* Gold slide-in hover via ::after, per brand brief */
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--felora-gold);
+  transform: translateX(-101%);
+  transition: transform var(--dur-slow) var(--ease);
+  z-index: -1;
+}
+.btn:hover::after { transform: translateX(0); }
+.btn:hover { border-color: var(--felora-gold); color: var(--felora-noir); }
+
+.btn--ghost {
+  background: transparent;
+  color: inherit;
+  border-color: currentColor;
+}
+.btn--ghost::after { background: var(--felora-gold); }
+.btn--ghost:hover { color: var(--felora-noir); border-color: var(--felora-gold); }
+
+.btn--gold {
+  background: var(--felora-gold);
+  border-color: var(--felora-gold);
+  color: var(--felora-noir);
+}
+.btn--gold::after { background: var(--felora-noir); }
+.btn--gold:hover { color: var(--felora-ivory); border-color: var(--felora-noir); }
+
+/* Inputs — sharp, hairline, hover gold underline */
+.input {
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: 300;
+  transition: border-color var(--dur) var(--ease);
+}
+.input::placeholder { color: var(--felora-mink); opacity: 0.7; }
+.input:focus { outline: none; border-color: var(--felora-gold); }
+
+/* Utility: container */
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Section padding */
+.section {
+  padding-block: var(--section-y-mobile);
+}
+@media (min-width: 768px) {
+  .section { padding-block: var(--section-y); }
+}
+@media (min-width: 1200px) {
+  .section { padding-block: var(--section-y-lg); }
+}
+
+/* Inline gold accent rule (small, for inline use beside eyebrow) */
+.rule-gold--inline {
+  display: inline-block;
+  width: var(--rule-gold-w);
+  height: var(--rule-gold-h);
+  background: var(--felora-gold);
+  vertical-align: middle;
+  margin-right: 16px;
+}
+
+/* Selection style — restraint matters */
+::selection { background: var(--felora-gold); color: var(--felora-noir); }

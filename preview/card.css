@@ -1,0 +1,75 @@
+/* Preview-card shell. Each card is rendered at ~700px wide. */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  width: 100%;
+  background: var(--felora-ivory);
+  color: var(--fg);
+  overflow: hidden;
+}
+.card {
+  width: 100%;
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  min-height: 100%;
+}
+.card--dark { background: var(--felora-noir); color: var(--fg-inverse); }
+.card--cream { background: var(--felora-cream); }
+.card--blush { background: var(--felora-blush); }
+.card--ivory { background: var(--felora-ivory); }
+.card--onyx { background: var(--felora-onyx); color: var(--fg-inverse); }
+.row { display: flex; gap: 12px; align-items: stretch; flex-wrap: wrap; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+
+/* swatch */
+.sw {
+  flex: 1 1 0;
+  min-width: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 14px;
+  border: 1px solid var(--border);
+  min-height: 96px;
+  justify-content: space-between;
+}
+.sw--inverse { border-color: var(--border-inverse); }
+.sw__name {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+.sw__hex {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.6;
+  letter-spacing: 0.04em;
+}
+.sw__name--gold { color: var(--felora-gold); }
+
+label.k {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.26em;
+  color: var(--felora-terra);
+  font-weight: 400;
+  display: block;
+  line-height: 1;
+}
+.card--dark label.k, .card--onyx label.k { color: var(--felora-gold); }
+
+.note {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--felora-mink);
+  line-height: 1.6;
+}
+.card--dark .note, .card--onyx .note { color: #c9c1b4; }

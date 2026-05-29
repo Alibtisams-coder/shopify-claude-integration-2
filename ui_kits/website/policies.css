@@ -1,0 +1,175 @@
+/* ============================================================
+   FELŌRA · policies.css — two-column docs layout
+   ============================================================ */
+
+.policies {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 96px;
+  align-items: start;
+}
+.policies__toc {
+  position: sticky;
+  top: 100px;
+  align-self: start;
+}
+.policies__toc .eyebrow { color: var(--felora-terra); }
+.policies__toc hr.rule-gold { margin: 16px 0 20px; }
+.policies__toc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.policies__toc-list a {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--felora-mink);
+  border-left: 1px solid var(--border);
+  padding: 4px 0 4px 16px;
+  display: block;
+  transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.policies__toc-list a:hover {
+  color: var(--felora-noir);
+  border-color: var(--felora-gold);
+}
+
+.policies__body {
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+}
+
+/* Highlight box — the "Plain English first" intro per section */
+.policy__highlight {
+  background: var(--felora-cream);
+  border-left: 3px solid var(--felora-gold);
+  padding: 22px 28px;
+  margin: 8px 0 24px;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 14.5px;
+  line-height: 1.88;
+  color: var(--felora-noir);
+}
+.policy__highlight strong { font-weight: 500; color: var(--felora-noir); }
+
+/* Contact pill — dark band per section */
+.policy__contact {
+  background: var(--felora-noir);
+  padding: 24px 32px;
+  margin: 16px 0 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+.policy__contact p {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 13px;
+  color: rgba(196, 168, 130, 0.85);
+  margin: 0;
+}
+.policy__contact a {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--felora-gold);
+  letter-spacing: 0.04em;
+  transition: color var(--dur) var(--ease);
+}
+.policy__contact a:hover { color: var(--felora-ivory); }
+.policy { display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 100px; }
+.policy h2 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(1.625rem, 2.8vw, 2.25rem);
+  line-height: 1.1;
+  color: var(--felora-noir);
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.policy h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: var(--felora-noir);
+  margin: 24px 0 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(139, 111, 94, 0.14);
+}
+.policy p {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--felora-mink);
+  margin: 0;
+  max-width: 640px;
+}
+.policy p strong { color: var(--felora-noir); font-weight: 500; }
+.policy hr.rule-gold { margin: 16px 0; }
+
+.policy__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 0;
+  margin: 8px 0;
+}
+.policy__list li {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 16px;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--felora-mink);
+  align-items: baseline;
+}
+.policy__list li::before {
+  content: "";
+  display: inline-block;
+  width: 6px; height: 6px;
+  background: var(--felora-gold);
+  position: relative;
+  top: 4px;
+}
+.policy__list li strong { color: var(--felora-noir); font-weight: 500; }
+
+.policy__list--ol { counter-reset: step; }
+.policy__list--ol li::before {
+  counter-increment: step;
+  content: counter(step, decimal-leading-zero);
+  background: none;
+  width: auto;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--felora-gold);
+  top: 0;
+}
+.policy__list--ol li {
+  grid-template-columns: 24px 1fr;
+}
+
+.policy__list--contact li::before { display: none; }
+.policy__list--contact li { grid-template-columns: 1fr; }
+.policy__list--contact li strong {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--felora-noir);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 900px) {
+  .policies { grid-template-columns: 1fr; gap: 48px; }
+  .policies__toc { position: static; }
+  .policies__body { gap: 64px; }
+}
